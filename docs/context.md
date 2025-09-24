@@ -1,34 +1,14 @@
 # Introdução
 
-Imagine que você deseja apresentar este projeto para investidores que deverão decidir se investem ou não no desenvolvimento da sua ferramenta.
-
-A **Introdução** consiste das etapas: *Contextualização -- Definição do problema -- Definição dos Objetivos -- Justificativa*, e tem como função situar o seu trabalho dentro de um contexto de mercado e mostrar a importância da sua proposta para resolver a dor de um usuário.
-
-A Contextualização deve situar sem projeto em um determinado contexto de mercado, a fim de fornecer informações adicionais que possam ajudar a entender melhor o assunto que você irá abordar. Serve também para definir a relevância do seu assunto, uma vez que mostra o tamanho do mercado em que se está inserido. Ela pode envolver a análise de vários aspectos, como o ambiente histórico, cultural, político e social em que o problema a ser atacado surgiu.
-
-Escreva de 2 a 3 parágrafos para contetualizar o seu projeto.
+Este projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online, voltada ao leitor. A plataforma permitirá consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
 
 ## Problema
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, **não** é a hora de comentar sobre a solução/aplicação.
-
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
+Leitores frequentemente enfrentam dificuldades para acessar informações sobre acervos de bibliotecas, como a disponibilidade de livros, detalhes sobre obras específicas ou a simples consulta ao catálogo. Em muitos casos, essas informações estão restritas a consultas presenciais ou sistemas pouco acessíveis, o que limita a praticidade e reduz o interesse do público. Essa falta de acesso rápido e organizado gera frustração nos usuários e dificulta a experiência de leitura, criando a necessidade de uma solução que permita ao leitor obter informações de forma simples, ágil e acessível pela internet.
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
-
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+O principal objetivo deste projeto é desenvolver uma aplicação web de Biblioteca Online que ofereça aos leitores acesso rápido e fácil ao acervo disponível. Busca-se permitir a consulta de livros, verificar a disponibilidade de obras e acessar informações relevantes de maneira intuitiva e prática. Além disso, o projeto pretende melhorar a experiência do usuário, facilitando a descoberta de novos títulos e tornando o processo de consulta mais ágil e acessível, atendendo às necessidades dos leitores que atualmente encontram dificuldades em acessar informações de forma eficiente.
 
 ## Justificativa
 
