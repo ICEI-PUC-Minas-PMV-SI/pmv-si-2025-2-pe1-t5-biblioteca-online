@@ -12,23 +12,31 @@ O principal objetivo deste projeto é desenvolver uma aplicação web de Bibliot
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-Lembre-se de pesquisar e utilizar números que justifiquem por que é importante que tal problema seja resolvido ou que mostrem o impacto do problema na vida das pessoas.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O acesso a livros e materiais de leitura ainda é um desafio para muitos leitores, principalmente quando depende de consultas presenciais ou catálogos físicos limitados. Segundo dados do Instituto Brasileiro de Geografia e Estatística (IBGE, 2023), cerca de 40% da população brasileira não possui acesso regular a bibliotecas ou centros de leitura próximos, o que limita o hábito de leitura e o acesso a informações. 
+Além disso, observações do cotidiano indicam que leitores frequentemente gastam tempo procurando títulos disponíveis, enfrentando filas ou dificuldade de localizar obras
+específicas.
+Diante desse cenário, a equipe identificou a oportunidade de desenvolver uma aplicação
+web de Biblioteca Online, voltada para o usuário final, que facilite a consulta ao catálogo, verifique a disponibilidade de livros e ofereça informações de forma rápida e acessível. O projeto, além de solucionar uma necessidade real, permite que os leitores tenham uma experiência mais prática e organizada ao interagir com bibliotecas, tornando a leitura mais acessível e atrativa.
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+O público-alvo da aplicação consiste principalmente em leitores de diferentes faixas
+etárias, que desejam consultar livros e materiais de leitura de forma prática e rápida. Entre os perfis de usuários podemos destacar:
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+1. Leitores frequentes: Usuários habituados à leitura, que procuram títulos
+específicos e valorizam uma experiência ágil de consulta ao catálogo. Possuem
+familiaridade com tecnologias web e aplicativos digitais.
+2. Leitores ocasionais: Usuários que acessam a biblioteca esporadicamente,
+buscando informações ou títulos pontuais. Podem ter menor familiaridade com
+plataformas digitais, sendo necessário que a interface seja intuitiva e fácil de usar.
+3. Estudantes: Usuários que precisam consultar obras para estudos ou pesquisas.
+Valorizam filtros de pesquisa, organização do catálogo e informações detalhadas
+sobre cada título.
+4. Público geral interessado em leitura: Usuários com diferentes níveis de
+conhecimento tecnológico e interesses variados. Necessitam de uma navegação
+simples, com informações claras e acesso rápido ao conteúdo disponível.
 
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
+Todos os perfis compartilham a necessidade de acesso remoto ao catálogo, consulta
+rápida sobre disponibilidade de obras e informações relevantes sobre os livros, sem
+depender de visitas presenciais à biblioteca.
+
