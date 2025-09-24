@@ -19,7 +19,7 @@ Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos 
 > - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
 > - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
 > - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
+> 
 Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
@@ -27,7 +27,10 @@ Lembre-se que você deve ser enumerar e descrever precisamente e personalizada t
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|--------------------|------------------------------------|----------------------------------------|
+|Leitor------------- | Buscar livros por título, autor ou categoria--|Encontrar rapidamente os livros que me interessam--------|
+|Leitor -------------| Verificar a disponibilidade de um livro ------|Saber se posso lê-lo sem precisar ir à biblioteca--------|
+|Leitor--------------| Visualizar informações detalhadas sobre o livro--|Entender melhor o conteúdo antes de decidir lê-lo-----|
+|Leitor--------------| Navegar de forma simples e intuitiva----------|Ter uma experiência agradável e eficiente na biblioteca--|
 |Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
 |Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
 
@@ -48,16 +51,25 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade | 
 |------|-----------------------------------------|----| 
-|RF-001| A aplicação deve permitir que o usuário gerencie suas tarefas | ALTA |  
-|RF-002| A aplicação deve permitir a emissão de um relatório de tarefas realizadas no mês   | MÉDIA | 
-
-
+|RF-001| O sistema deve permitir que o leitor busque livros por título, autor ou categoria--| ALTA |  
+|RF-002| O sistema deve permitir que o leitor verifique se um livro está disponível e, quando disponível, abra o arquivo em PDF para leitura online | MÉDIA | 
+|RF-003| O sistema deve permitir que o leitor visualize informações detalhadas sobre cada livro (resumo, autor e categoria) | Alta |
+|RF-004| O sistema deve oferecer uma interface de navegação simples e clara| Alta |
+|RF-005| O sistema deve permitir que o administrador simulado adicione, edite ou remova livros do catálogo (mock) | Média |
+|RF-006| O sistema deve permitir que o administrador simulado organize os livros por categorias | Média |
+**Prioridade: Alta / Média / Baixa
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| A aplicação deve ser responsiva | MÉDIA | 
-|RNF-002| A aplicação deve processar requisições do usuário em no máximo 3s |  BAIXA | 
+|RNF-01| O sistema deve ser desenvolvido utilizando tecnologias web frontend (HTML, CSS, JavaScript/React) | Alta | 
+|RNF-02| O sistema deve ser responsivo, permitindo acesso em dispositivos móveis e desktops | Alta |
+|RNF-03| O tempo de resposta para carregar a página inicial e o catálogo não deve exceder 5 segundos | Alta |
+|RNF-04| A interface deve seguir boas práticas de usabilidade, garantindo clareza e facilidade de uso | Alta |
+|RNF-05| O sistema deve permitir fácil manutenção e atualização dos dados do catálogo | Média |
+|RNF-06| O sistema deve estar em conformidade com padrões de acessibilidade web (como contraste e legibilidade) | Média |
+|RNF-07| O projeto deverá utilizar TailwindCSS como framework de estilos para garantir consistência visual e produtividade no frontend | Média |
+|RNF-08| O código-fonte deverá ser versionado usando Git e hospedado no GitHub; todo trabalho deve seguir fluxo de versionamento (commits claros, branches para features) | Alta |
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
