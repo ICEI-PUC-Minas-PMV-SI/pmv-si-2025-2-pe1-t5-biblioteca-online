@@ -7,33 +7,27 @@ Apresente uma visão geral do que será abordado nesta parte do documento, enume
 Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
 
 ## Personas
+Perfis de usuário
+| Perfil Administrador (Admin-Simulado) |
+| Descrição | Usuário que realiza ações de gerenciamento do catálogo de forma simulada no frontend, utilizando dados pré-carregados ou apiS PÚBLICAS |
+| Necessidades | Testar funcionalidades de adição, remoção ou edição de livros (mock), verificar a organização do acervo e acompanhar como o catálogo é apresentado ao leitor |
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
-
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
-> 
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
+| Perfil leitor (User) |
+| Descrição | Usuário inal que acessa a biblioteca online para consultar livros e informações disponíveis |
+| Necessidade | Buscar livros por título, autor ou categoria, verificar disponibilidade, acessar informações detalhadas das obras e navegar de forma simples e intuitiva |
 
 ## Histórias de Usuários
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
-|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
-|Leitor------------- | Buscar livros por título, autor ou categoria--|Encontrar rapidamente os livros que me interessam--------|
-|Leitor -------------| Verificar a disponibilidade de um livro ------|Saber se posso lê-lo sem precisar ir à biblioteca--------|
-|Leitor--------------| Visualizar informações detalhadas sobre o livro--|Entender melhor o conteúdo antes de decidir lê-lo-----|
-|Leitor--------------| Navegar de forma simples e intuitiva----------|Ter uma experiência agradável e eficiente na biblioteca--|
-|Usuário do sistema  | Registrar minhas tarefas           | Não esquecer de fazê-las               |
-|Administrador       | Alterar permissões                 | Permitir que possam administrar contas |
-
+| EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR` |
+| Leitor              | Buscar livros por título, autor ou categoria |Encontrar rapidamente os livros que me interessam |
+| Leitor              | Verificar a disponibilidade de um livro |Saber se posso lê-lo sem precisar ir à biblioteca |
+| Leitor              | Visualizar informações detalhadas sobre o livro |Entender melhor o conteúdo antes de decidir lê-lo |
+| Leitor              | Navegar de forma simples e intuitiva |Ter uma experiência agradável e eficiente na biblioteca |
+| Administrador       | Adicionar, editar ou remover livros no catálogo | Testa como o acervo será apresentado aos leitores |
+| Administrador | Organizar o catálogo por categorias | facilitar a navegação e a
+busca pelos livros |
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
 > **Links Úteis**:
@@ -57,7 +51,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RF-004| O sistema deve oferecer uma interface de navegação simples e clara| Alta |
 |RF-005| O sistema deve permitir que o administrador simulado adicione, edite ou remova livros do catálogo (mock) | Média |
 |RF-006| O sistema deve permitir que o administrador simulado organize os livros por categorias | Média |
-**Prioridade: Alta / Média / Baixa
+
 ### Requisitos não Funcionais
 
 |ID     | Descrição do Requisito  |Prioridade |
