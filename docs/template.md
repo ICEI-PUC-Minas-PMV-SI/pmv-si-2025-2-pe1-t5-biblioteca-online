@@ -30,15 +30,6 @@ A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante
 |#FF6B00| Laranja	            | Destaque para botões de ação (CTAs), links |
 |#FFF0E6| Laranja Pálido      | Fundo para seções de destaque ou alertas   |
 
-| Hexadecimal | Taxa de sucesso | Satisfação subjetiva | Tempo para conclusão do cenário |
-|---------|-----------------|----------------------|---------------------------------|
-| 1       | SIM             | 5                    | 27.87 segundos                  |
-| 2       | SIM             | 5                    | 17.11 segundos                  |
-| 3       | SIM             | 5                    | 39.09 segundos                  |
-|  |  |  |  |
-| **Média**     | 100%           | 5                | 28.02 segundos                           |
-| **Tempo para conclusão pelo especialista** | SIM | 5 | 8.66 segundos |
-
 
 ## Tipografia
 
@@ -57,12 +48,13 @@ Defina os ícones que serão utilizados e suas respectivas funções.
 
 Os ícones da biblioteca Feather Icons serão usados para fornecer reconhecimento visual rápido para ações e seções comuns.
 
-| Ícone	 |          Função|
-| Home	 | Navegar para a página inicial.|
-| Book	 | Representar o "Acervo" ou uma seção de leitura.|
-| Award	 | Indicar a seção "Expert Reader" ou livros premiados.|
-| List	 | Acessar as listas de livros criadas pelo usuário.|
-| Play	 | Iniciar ou continuar uma leitura.|
+| Ícone	 | Função |
+|--------|----------------------------------------------------------|
+| Home	 | Navegar para a página inicial.                           |
+| Book	 | Representar o "Acervo" ou uma seção de leitura.          |
+| Award	 | Indicar a seção "Expert Reader" ou livros premiados.     |
+| List	 | Acessar as listas de livros criadas pelo usuário.        |
+| Play	 | Iniciar ou continuar uma leitura.                        |
 | Check	 | tConfirmar uma ação, como adicionar um livro a uma lista.|
 
 Apresente os estilos CSS criados para cada um dos elementos apresentados.
