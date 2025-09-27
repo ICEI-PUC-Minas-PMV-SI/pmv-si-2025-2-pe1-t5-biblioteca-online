@@ -17,7 +17,7 @@ Menu de Ações: Botões de ação, como "Ler Mais Tarde" ou "Adicionar à Lista
 
 ## Cores
 
-Apresente a paleta de cores que será utilizada. Uma ferramenta interessante para a criação de palestas de cores é o *Adobe Color* ([https://color.adobe.com/pt/create/color-wheel](https://color.adobe.com/pt/create/color-wheel)).
+![Texto alternativo](img/Cartela_de_cores_id.jpeg)
 
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
