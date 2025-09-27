@@ -60,7 +60,8 @@ Os ícones da biblioteca Feather Icons serão usados para fornecer reconheciment
 Apresente os estilos CSS criados para cada um dos elementos apresentados.
 
 Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
-<img width="737" height="511" alt="image" src="https://github.com/user-attachments/assets/bac147bc-4c25-4cf1-94e2-90d4e52df844" />
+<img width="1019" height="717" alt="Texto do seu parágrafo" src="https://github.com/user-attachments/assets/b0db30cf-fe0f-4972-9fe6-cb59a1228a46" />
+
 
 
 
