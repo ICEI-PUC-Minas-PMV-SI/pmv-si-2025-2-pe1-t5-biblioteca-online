@@ -7,7 +7,7 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ## User Flow
 
-![Exemplo de UserFlow](img/userflow.jpg)
+![UserFlow](img/userflow_puc.png)
 
 O fluxo de navegação da aplicação foi pensado para ser direto e fácil de usar, acompanhando o usuário em todas as interações com a biblioteca online. Na página inicial, é possível retomar rapidamente a leitura em andamento e acessar as principais seções do sistema. Pelo menu, o usuário pode navegar entre Home, Acervo, Expert Reader, Favoritos e Listas, mantendo as funções sempre acessíveis.
 
