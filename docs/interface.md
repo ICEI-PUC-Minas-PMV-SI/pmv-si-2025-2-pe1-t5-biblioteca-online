@@ -9,11 +9,13 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ![UserFlow](img/userflow_puc.png)
 
-O fluxo de navegação da aplicação foi pensado para ser direto e fácil de usar, acompanhando o usuário em todas as interações com a biblioteca online. Na página inicial, é possível retomar rapidamente a leitura em andamento e acessar as principais seções do sistema. Pelo menu, o usuário pode navegar entre Home, Acervo, Expert Reader, Favoritos e Listas, mantendo as funções sempre acessíveis.
+O fluxo de navegação da aplicação foi pensado para ser direto e fácil de usar, acompanhando o usuário em todas as interações com a biblioteca online. Na página inicial, é possível retomar rapidamente a leitura em andamento, ver recomendações de leitura e acessar as principais seções do sistema. Pelo menu hamburguer, o usuário pode navegar entre Home, Acervo, Expert Reader, Favoritos e Listas, mantendo as funções sempre acessíveis.
 
-Ao clicar em um livro, o usuário pode seguir dois caminhos: se já iniciou a leitura, será levado para a última página acessada; se ainda não começou, será direcionado para a página de detalhes, com informações adicionais, recomendações e opções de adicionar o título a listas personalizadas. A leitura é contínua e conta com ações práticas, como salvar para ler mais tarde ou incluir em favoritos.
+Ao clicar em um livro, o usuário pode seguir dois caminhos: se já iniciou a leitura, será levado para a última página acessada; se ainda não começou, será direcionado para a página de detalhes, com informações adicionais, recomendações e opções de adicionar o título a listas personalizadas e/ou favoritos. A leitura é contínua e conta com ações práticas, como salvar para ler mais tarde ou incluir em favoritos. O fluxo também permite que o usuário acesse informações sobre o autor e suas obras.
 
-O fluxo também abrange a navegação para páginas de autores, com dados sobre suas obras, e a seção Expert Reader, que sugere livros de acordo com o perfil do usuário e apresenta os mais bem avaliados. No Acervo, é possível explorar títulos por categorias, enquanto a área de Favoritos e Listas reúne os livros marcados e as listas criadas. Assim, o userflow oferece uma jornada clara e organizada, voltada para facilitar a descoberta, a leitura e a gestão do acervo digital.
+A seção Expert Reader sugere livros de acordo com o perfil do usuário e apresenta os mais bem avaliados por outros leitores. No Acervo, é possível explorar títulos por categorias, enquanto a área de Favoritos e Listas reúne os livros marcados e as listas criadas. 
+
+O userflow foi pensado em garantir simplicidade e boa experiência de navegação ao usuário. Outras funcionalidades podem ser integradas futuramente. 
 
 ## Wireframes
 
