@@ -21,13 +21,13 @@ Apresente a paleta de cores que será utilizada. Uma ferramenta interessante par
 
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
-Hexadecimal	      Nome	                      Função
-- #F4F7F9	----- Cinza-Azulado	------- Fundo principal da aplicação
-- #FFFFFF	----- Branco -------------- Superfícies de conteúdo (cards, modais)
-- #1A2B48	----- Azul Marinho Escuro	- Texto principal, títulos
-- #7A8291	----- Cinza-Azulado	------- Texto secundário, descrições, legendas
-- #FF6B00	----- Laranja	------------- Destaque para botões de ação (CTAs), links
-- #FFF0E6	----- Laranja Pálido ------ Fundo para seções de destaque ou alertas
+| Hexadecimal	|         Nome	      |             Função |        
+|   #F4F7F9	  | Cinza-Azulado	      | Fundo principal da aplicação |
+|   #FFFFFF	  | Branco              | Superfícies de conteúdo (cards, modais) |
+|   #1A2B48	  | Azul Marinho Escuro | Texto principal, títulos |
+|   #7A8291	  | Cinza-Azulado       | Texto secundário, descrições, legendas |
+|   #FF6B00	  | Laranja	            | Destaque para botões de ação (CTAs), links |
+|   #FFF0E6	  | Laranja Pálido      | Fundo para seções de destaque ou alertas |
 
 
 ## Tipografia
@@ -47,13 +47,13 @@ Defina os ícones que serão utilizados e suas respectivas funções.
 
 Os ícones da biblioteca Feather Icons serão usados para fornecer reconhecimento visual rápido para ações e seções comuns.
 
-Ícone	            Função
-- Home	--- Navegar para a página inicial.
-- Book	--- Representar o "Acervo" ou uma seção de leitura.
-- Award	--- Indicar a seção "Expert Reader" ou livros premiados.
-- List	--- Acessar as listas de livros criadas pelo usuário.
-- Play	--- Iniciar ou continuar uma leitura.
-- Check	--- tConfirmar uma ação, como adicionar um livro a uma lista.
+| Ícone	 |          Função|
+| Home	 | Navegar para a página inicial.|
+| Book	 | Representar o "Acervo" ou uma seção de leitura.|
+| Award	 | Indicar a seção "Expert Reader" ou livros premiados.|
+| List	 | Acessar as listas de livros criadas pelo usuário.|
+| Play	 | Iniciar ou continuar uma leitura.|
+| Check	 | tConfirmar uma ação, como adicionar um livro a uma lista.|
 
 Apresente os estilos CSS criados para cada um dos elementos apresentados.
 Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
