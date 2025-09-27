@@ -17,8 +17,6 @@ Menu de Ações: Botões de ação, como "Ler Mais Tarde" ou "Adicionar à Lista
 
 ## Cores
 
-![Texto alternativo](img/Cartela_de_cores_id.jpeg)
-
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
 | **Hexadecimal** | **Nome** | **Função** |
