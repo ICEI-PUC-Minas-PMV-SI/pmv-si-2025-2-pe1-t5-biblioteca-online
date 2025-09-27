@@ -58,8 +58,9 @@ Os ícones da biblioteca Feather Icons serão usados para fornecer reconheciment
 | Check	 | tConfirmar uma ação, como adicionar um livro a uma lista.|
 
 Apresente os estilos CSS criados para cada um dos elementos apresentados.
-
 Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
+
+
 <img width="1019" height="717" alt="Texto do seu parágrafo" src="https://github.com/user-attachments/assets/b0db30cf-fe0f-4972-9fe6-cb59a1228a46" />
 
 
