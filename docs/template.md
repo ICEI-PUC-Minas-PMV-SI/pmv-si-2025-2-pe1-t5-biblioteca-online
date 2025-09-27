@@ -22,12 +22,12 @@ Apresente a paleta de cores que será utilizada. Uma ferramenta interessante par
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
 Hexadecimal	      Nome	                      Função
-#F4F7F9	----- Cinza-Azulado	------- Fundo principal da aplicação
-#FFFFFF	----- Branco -------------- Superfícies de conteúdo (cards, modais)
-#1A2B48	----- Azul Marinho Escuro	- Texto principal, títulos
-#7A8291	----- Cinza-Azulado	------- Texto secundário, descrições, legendas
-#FF6B00	----- Laranja	------------- Destaque para botões de ação (CTAs), links
-#FFF0E6	----- Laranja Pálido ------ Fundo para seções de destaque ou alertas
+- #F4F7F9	----- Cinza-Azulado	------- Fundo principal da aplicação
+- #FFFFFF	----- Branco -------------- Superfícies de conteúdo (cards, modais)
+- #1A2B48	----- Azul Marinho Escuro	- Texto principal, títulos
+- #7A8291	----- Cinza-Azulado	------- Texto secundário, descrições, legendas
+- #FF6B00	----- Laranja	------------- Destaque para botões de ação (CTAs), links
+- #FFF0E6	----- Laranja Pálido ------ Fundo para seções de destaque ou alertas
 
 
 ## Tipografia
@@ -35,10 +35,10 @@ Hexadecimal	      Nome	                      Função
 Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
 
 A fonte Inter será utilizada em todo o site para garantir consistência e legibilidade. Ela será importada do Google Fonts.
-Título de Página : 32px, Bold (700)
-Título de Seção : 24px, Semi-Bold (600)
-Rótulos e Botões: 16px, Medium (500)
-Corpo de Texto: 16px, Regular (400)
+- Título de Página : 32px, Bold (700)
+- Título de Seção : 24px, Semi-Bold (600)
+- Rótulos e Botões: 16px, Medium (500)
+- Corpo de Texto: 16px, Regular (400)
 
 
 ## Iconografia
@@ -48,12 +48,12 @@ Defina os ícones que serão utilizados e suas respectivas funções.
 Os ícones da biblioteca Feather Icons serão usados para fornecer reconhecimento visual rápido para ações e seções comuns.
 
 Ícone	            Função
-Home	--- Navegar para a página inicial.
-Book	--- Representar o "Acervo" ou uma seção de leitura.
-Award	--- Indicar a seção "Expert Reader" ou livros premiados.
-List	--- Acessar as listas de livros criadas pelo usuário.
-Play	--- Iniciar ou continuar uma leitura.
-Check	--- tConfirmar uma ação, como adicionar um livro a uma lista.
+- Home	--- Navegar para a página inicial.
+- Book	--- Representar o "Acervo" ou uma seção de leitura.
+- Award	--- Indicar a seção "Expert Reader" ou livros premiados.
+- List	--- Acessar as listas de livros criadas pelo usuário.
+- Play	--- Iniciar ou continuar uma leitura.
+- Check	--- tConfirmar uma ação, como adicionar um livro a uma lista.
 
 Apresente os estilos CSS criados para cada um dos elementos apresentados.
 Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
