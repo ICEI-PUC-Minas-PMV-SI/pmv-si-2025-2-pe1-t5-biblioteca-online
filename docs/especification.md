@@ -18,7 +18,7 @@ Perfis de usuário
 
 ## Histórias de Usuários
 
-Com base na análise das personas forma identificadas as seguintes histórias de usuários:
+Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
 | EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR` |
 | Leitor              | Buscar livros por título, autor ou categoria |Encontrar rapidamente os livros que me interessam |
@@ -40,6 +40,13 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 ## Requisitos
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
+
+| Busca por livros | O sistema deve permitir que o leitor busque livros por título, autor ou categoria |
+| Consulta de disponibilidade e acesso ao livro | O sistema deve permitir que o leitor verifique se um livro está disponível e, quando disponível, abra o arquivo em PDF para leitura online |
+| Visualização de informações detalhadas | O sistema deve permitir que o leitor veja detalhes sobre cada livro, como resumo, autor e categoria |
+| Navegação intuitiva | O sistema deve oferecer uma navegação simples e clara, garantindo uma experiência agradável para o leitor |
+| Gestão de livros simulada (Admin) | O sistema deve permitir que o administrador simulado adicione, edite ou remova livros no catálogo usando dados pré-carregados ou mock |
+| Organização do catálogo (Admin) | O sistema deve permitir que o administrador simulado organize os livros por categorias para facilitar a busca do leitor |
 
 ### Requisitos Funcionais
 
