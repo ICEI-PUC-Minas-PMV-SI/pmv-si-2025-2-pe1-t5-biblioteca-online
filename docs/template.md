@@ -30,7 +30,6 @@ A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante
 |#FF6B00| Laranja	            | Destaque para botões de ação (CTAs), links |
 |#FFF0E6| Laranja Pálido      | Fundo para seções de destaque ou alertas   |
 
-
 ## Tipografia
 
 Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
@@ -41,6 +40,7 @@ A fonte Inter será utilizada em todo o site para garantir consistência e legib
 - Rótulos e Botões: 16px, Medium (500)
 - Corpo de Texto: 16px, Regular (400)
 
+```css :root { --font-family-base: 'Inter', sans-serif; --font-size-page-title: 32px; --font-weight-page-title: 700; /* Bold */ --font-size-section-title: 24px; --font-weight-section-title: 600; /* Semi-Bold */ --font-size-label: 16px; --font-weight-label: 500; /* Medium */ --font-size-body: 16px; --font-weight-body: 400; /* Regular */ } ```
 
 ## Iconografia
 
