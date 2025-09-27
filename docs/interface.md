@@ -9,13 +9,11 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 
 ![Exemplo de UserFlow](img/userflow.jpg)
 
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
+O fluxo de navegação da aplicação foi pensado para ser direto e fácil de usar, acompanhando o usuário em todas as interações com a biblioteca online. Na página inicial, é possível retomar rapidamente a leitura em andamento e acessar as principais seções do sistema. Pelo menu, o usuário pode navegar entre Home, Acervo, Expert Reader, Favoritos e Listas, mantendo as funções sempre acessíveis.
 
-> **Links Úteis**:
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools & Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+Ao clicar em um livro, o usuário pode seguir dois caminhos: se já iniciou a leitura, será levado para a última página acessada; se ainda não começou, será direcionado para a página de detalhes, com informações adicionais, recomendações e opções de adicionar o título a listas personalizadas. A leitura é contínua e conta com ações práticas, como salvar para ler mais tarde ou incluir em favoritos.
 
+O fluxo também abrange a navegação para páginas de autores, com dados sobre suas obras, e a seção Expert Reader, que sugere livros de acordo com o perfil do usuário e apresenta os mais bem avaliados. No Acervo, é possível explorar títulos por categorias, enquanto a área de Favoritos e Listas reúne os livros marcados e as listas criadas. Assim, o userflow oferece uma jornada clara e organizada, voltada para facilitar a descoberta, a leitura e a gestão do acervo digital.
 
 ## Wireframes
 
