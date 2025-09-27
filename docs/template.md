@@ -21,7 +21,7 @@ Apresente a paleta de cores que será utilizada. Uma ferramenta interessante par
 
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
-|Hexadecimal | Nome | Função |
+| #Hexadecimal | #Nome | #Função |
 |-------|---------------------|--------------------------------------------|
 |#F4F7F9| Cinza-Azulado       | Fundo principal da aplicação               |
 |#FFFFFF| Branco              | Superfícies de conteúdo (cards, modais)    |
