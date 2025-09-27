@@ -21,7 +21,7 @@ Apresente a paleta de cores que será utilizada. Uma ferramenta interessante par
 
 A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
 
-| #Hexadecimal | #Nome | #Função |
+| **Hexadecimal** | **Nome** | **Função** |
 |-------|---------------------|--------------------------------------------|
 |#F4F7F9| Cinza-Azulado       | Fundo principal da aplicação               |
 |#FFFFFF| Branco              | Superfícies de conteúdo (cards, modais)    |
@@ -48,7 +48,7 @@ Defina os ícones que serão utilizados e suas respectivas funções.
 
 Os ícones da biblioteca Feather Icons serão usados para fornecer reconhecimento visual rápido para ações e seções comuns.
 
-| Ícone	 | Função |
+| **Ícone**	 | **Função** |
 |--------|----------------------------------------------------------|
 | Home	 | Navegar para a página inicial.                           |
 | Book	 | Representar o "Acervo" ou uma seção de leitura.          |
