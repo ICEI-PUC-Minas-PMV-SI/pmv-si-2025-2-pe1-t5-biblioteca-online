@@ -21,11 +21,11 @@ Perfis de usuário
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
 | EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR` |
-| Leitor              | Buscar livros por título, autor ou categoria |Encontrar rapidamente os livros que me interessam |
-| Leitor              | Verificar a disponibilidade de um livro |Saber se posso lê-lo sem precisar ir à biblioteca |
-| Leitor              | Visualizar informações detalhadas sobre o livro |Entender melhor o conteúdo antes de decidir lê-lo |
-| Leitor              | Navegar de forma simples e intuitiva |Ter uma experiência agradável e eficiente na biblioteca |
-| Administrador       | Adicionar, editar ou remover livros no catálogo | Testa como o acervo será apresentado aos leitores |
+| Leitor | Buscar livros por título, autor ou categoria |Encontrar rapidamente os livros que me interessam |
+| Leitor | Verificar a disponibilidade de um livro |Saber se posso lê-lo sem precisar ir à biblioteca |
+| Leitor | Visualizar informações detalhadas sobre o livro |Entender melhor o conteúdo antes de decidir lê-lo |
+| Leitor | Navegar de forma simples e intuitiva |Ter uma experiência agradável e eficiente na biblioteca |
+| Administrador | Adicionar, editar ou remover livros no catálogo | Testa como o acervo será apresentado aos leitores |
 | Administrador | Organizar o catálogo por categorias | facilitar a navegação e a
 busca pelos livros |
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
