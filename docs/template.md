@@ -28,6 +28,28 @@ A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante
 |#FF6B00| Laranja	            | Destaque para botões de ação (CTAs), links |
 |#FFF0E6| Laranja Pálido      | Fundo para seções de destaque ou alertas   |
 
+````
+/* Color Theme Swatches in Hex */
+.Cartela-Principal-1-hex { color: #1A2B48; }
+.Cartela-Principal-2-hex { color: #FFF0E6; }
+.Cartela-Principal-3-hex { color: #FF6B00; }
+.Cartela-Principal-4-hex { color: #7A8291; }
+.Cartela-Principal-5-hex { color: #F4F7F9; }
+
+/* Color Theme Swatches in RGBA */
+.Cartela-Principal-1-rgba { color: rgba(26, 43, 72, 1); }
+.Cartela-Principal-2-rgba { color: rgba(255, 240, 230, 1); }
+.Cartela-Principal-3-rgba { color: rgba(255, 107, 0, 1); }
+.Cartela-Principal-4-rgba { color: rgba(122, 130, 145, 1); }
+.Cartela-Principal-5-rgba { color: rgba(244, 247, 249, 1); }
+
+/* Color Theme Swatches in HSLA */
+.Cartela-Principal-1-hsla { color: hsla(217, 46, 19, 1); }
+.Cartela-Principal-2-hsla { color: hsla(23, 100, 95, 1); }
+.Cartela-Principal-3-hsla { color: hsla(25, 100, 50, 1); }
+.Cartela-Principal-4-hsla { color: hsla(219, 9, 52, 1); }
+.Cartela-Principal-5-hsla { color: hsla(204, 29, 96, 1); }
+````
 ## Tipografia
 
 Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
