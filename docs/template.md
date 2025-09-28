@@ -60,7 +60,21 @@ A fonte Inter será utilizada em todo o site para garantir consistência e legib
 - Rótulos e Botões: 16px, Medium (500)
 - Corpo de Texto: 16px, Regular (400)
 
-```css :root { --font-family-base: 'Inter', sans-serif; --font-size-page-title: 32px; --font-weight-page-title: 700; /* Bold */ --font-size-section-title: 24px; --font-weight-section-title: 600; /* Semi-Bold */ --font-size-label: 16px; --font-weight-label: 500; /* Medium */ --font-size-body: 16px; --font-weight-body: 400; /* Regular */ } ```
+````
+css :root {
+ --font-family-base: 'Inter', sans-serif;
+--font-size-page-title: 32px;
+
+--font-weight-page-title: 700; /* Bold */
+--font-size-section-title: 24px;
+
+--font-weight-section-title: 600; /* Semi-Bold */
+--font-size-label: 16px; --font-weight-label: 500; /* Medium */
+
+--font-size-body: 16px;
+--font-weight-body: 400; /* Regular */ }
+
+````
 
 ## Iconografia
 
