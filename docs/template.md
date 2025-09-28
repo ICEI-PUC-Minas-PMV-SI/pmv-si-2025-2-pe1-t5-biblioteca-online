@@ -61,7 +61,7 @@ A fonte Inter será utilizada em todo o site para garantir consistência e legib
 - Corpo de Texto: 16px, Regular (400)
 
 ````
-css :root {
+:root {
  --font-family-base: 'Inter', sans-serif;
 --font-size-page-title: 32px;
 
