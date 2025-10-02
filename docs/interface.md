@@ -19,18 +19,25 @@ O userflow foi pensado em garantir simplicidade e boa experiência de navegaçã
 
 ## Wireframes
 
+### Home
 ![Home](img/wireframe_1.jpg)
 
+### Acervo
 ![Acervo](img/wireframe_2.jpg)
 
+### Detalhes do Livro
 ![Detalhes do Livro](img/wireframe_3.jpg)
 
+### Leitura
 ![Leitura](img/wireframe_4.jpg)
 
+### Autor
 ![Autor](img/wireframe_5.jpg)
 
+### Favoritos e Listas
 ![Favoritos e Listas](img/wireframe_6.jpg)
 
+### Expert Reader
 ![Expert Reader](img/wireframe_7.jpg)
 
  
