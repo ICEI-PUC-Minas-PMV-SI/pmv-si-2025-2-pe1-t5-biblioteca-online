@@ -19,19 +19,19 @@ O userflow foi pensado em garantir simplicidade e boa experiência de navegaçã
 
 ## Wireframes
 
-![Home](img/Wireframes Biblioteca Online_page-0001.jpg)
+![Home](img/wireframe_1.jpg)
 
-![Acervo](img/Wireframes Biblioteca Online_page-0002.jpg)
+![Acervo](img/wireframe_2.jpg)
 
-![Detalhes do Livro](img/Wireframes Biblioteca Online_page-0003.jpg)
+![Detalhes do Livro](img/wireframe_3.jpg)
 
-![Leitura](img/Wireframes Biblioteca Online_page-0004.jpg)
+![Leitura](img/wireframe_4.jpg)
 
-![Autor](img/Wireframes Biblioteca Online_page-0005.jpg)
+![Autor](img/wireframe_5.jpg)
 
-![Favoritos e Listas](img/Wireframes Biblioteca Online_page-0006.jpg)
+![Favoritos e Listas](img/wireframe_6.jpg)
 
-![Expert Reader](img/Wireframes Biblioteca Online_page-0007.jpg)
+![Expert Reader](img/wireframe_7.jpg)
 
  
 > **Links Úteis**:
