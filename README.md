@@ -16,6 +16,7 @@ O projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online,
 * Elias Drates
 * Junio Gabriel
 * Simone Torres
+* Jennifer Daleffi
 
 
 ## Orientador
