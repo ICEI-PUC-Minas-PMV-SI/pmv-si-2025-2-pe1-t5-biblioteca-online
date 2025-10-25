@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhe do Livro</title>
+    <link rel="stylesheet" href="detalhesdolivro.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+
+    <header class="header">
+        <div class="soon">Biblioteca Virtual</div>
+        <div class="header-right">
+            <nav' class="menu">
+                <a href="#">Home</a>
+                <a href="#">Acervo</a>
+                <a href="#">Salvos</a>
+                <a href="#">Expert Reader</a>
+            </nav>
+            <div class="search">
+                <input type="text" placeholder="Pesquisar" class="search-box">
+                <div class="search-icon">
+                    <i data-feather="search"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        
+        <section class="book-details">
+            <div class="maincover-book">
+                <span>Capa do livro</span>
+            </div>
+            <div class="info-livro">
+                <h1>Título do Livro</h1>
+                <p>Informações completas sobre este livro incrível.</p>
+                <div class="tags">
+                    <span class="tag">Fantasia</span>
+                    <span class="tag">Aventura</span>
+                    <span class="tag">Ficção Científica</span>
+                </div>
+                <div class="description">
+                    <h1>Descrição</h1>
+                    <h5>Uma jornada fascinante.</h5>
+                    <p>Este livro nos conduz através de uma narrativa intrigante, cheia de reviravoltas e personagens...</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="author-review">
+            <a href="#" class="card-author">
+                <div class="image-author"></div>
+                <div class="info-author">
+                    <h3 class="author">Autor</h3>
+                    <p class="name">Nome do Autor</p>
+                </div>
+            </a>
+            <div class="card-rating">
+                <div class="image-card-rating"></div>
+                <div class="info-card-rating">
+                    <h3 class="label">Avaliação</h3>
+                    <div class="stars">
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span>★</span>
+                        <span class="empty">★</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="actions">
+            <h2>Ações</h2>
+            <div class="list-actions">
+                <button class="card-action">
+                    <div class="icon-action">
+                        <i data-feather="bookmark"></i>
+                    </div>
+                    <p>Ler Mais Tarde</p>
+                </button>
+                <button class="card-action">
+                    <div class="icon-action">
+                        <i data-feather="book-open"></i>
+                    </div>
+                    <p>Ler Agora</p>
+                </button>
+                <button class="card-action">
+                    <div class="icon-action">
+                        <i data-feather="edit-3"></i>
+                    </div>
+                    <p>Estudos</p>
+                </button>
+            </div>
+        </section>
+
+        <section class="more-books">
+            <h2>Mais livros do autor</h2>
+            <div class="list-books">
+                <button class="card-book">
+                    <div class="bookcover-others"><span>Capa Livro 1</span></div>
+                    <p>Livro 1</p>
+                </button>
+                <button class="card-book">
+                    <div class="bookcover-others"><span>Capa Livro 2</span></div>
+                    <p>Livro 2</p>
+                </button>
+                <button class="card-book">
+                    <div class="bookcover-others"><span>Capa Livro 3</span></div>
+                    <p>Livro 3</p>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <a href="#">Sobre nós</a>
+        <a href="#">Política de Privacidade</a>
+        <a href="#">Termos de Uso</a>
+        <a href="#">Contacte-Nos</a>
+    </footer>
+
+    <script>
+        feather.replace();
+    </script>
+
+</body>
+</html>
