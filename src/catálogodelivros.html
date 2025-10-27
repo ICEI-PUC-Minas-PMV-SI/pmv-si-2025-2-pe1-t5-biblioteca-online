@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca Virtual - Catálogo V3</title>
+    <style>
+
+        :root {
+            --cor-principal: #333333;
+            --cor-secundaria: #888888;
+            --cor-fundo-header: #666666;
+            --cor-fundo-body: #ffffff;
+            --cor-acento: #000000;
+            --cor-borda: #dddddd;
+            --cor-capa-placeholder: #e9e9e9;
+            --cor-novo-tag: #cccccc;
+        }
+    
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: var(--cor-fundo-body);
+            color: var(--cor-principal);
+            line-height: 1.6;
+        }
+      
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 5%;
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid var(--cor-borda);
+        }
+
+        .logo {
+            font-size: 1.2em;
+            font-weight: bold;
+        }
+
+      
+        .nav-links a {
+            text-decoration: none;
+            color: var(--cor-principal);
+            font-size: 0.9em;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--cor-borda);
+            border-radius: 4px;
+            padding: 5px 10px;
+        }
+
+        .search-bar input {
+            border: none;
+            outline: none;
+            padding: 0 5px;
+            font-size: 0.9em;
+        }
+
+        .search-bar button {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: var(--cor-secundaria);
+            font-size: 1.2em;
+        }
+        
+        .hero-banner {
+            background-color: var(--cor-fundo-header);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .hero-banner h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .hero-banner p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+
+        .search-box {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .search-box button {
+            background-color: var(--cor-acento);
+            color: #ffffff;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .categories {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .categories a {
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #777777;
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+       
+        .novidades-section {
+            display: flex;
+            padding-top: 60px; 
+            padding-bottom: 60px; 
+            gap: 40px; 
+            align-items: flex-start;
+        }
+
+        .titulo-novidades {
+            flex-basis: 250px; 
+            font-size: 2em;
+            font-weight: bold;
+            color: var(--cor-principal);
+            text-align: left; 
+            flex-shrink: 0; 
+            margin-top: 30px; 
+        }
+
+        .catalogo-novidades {
+            flex-grow: 1; 
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px 20px;          
+            max-width: 400px;
+            justify-self: end;
+            margin-left: auto;
+        }
+        
+        .novidades-livros-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: flex-end; 
+        }
+
+        .book-card-novidade {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .capa-novidade-container {
+            width: 150px; 
+            height: 180px; 
+            background-color: var(--cor-capa-placeholder);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border: 1px solid var(--cor-borda);
+            overflow: hidden; 
+        }
+        
+        .capa-novidade-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            display: block;
+        }
+
+        .capa-novidade-tag {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--cor-novo-tag);
+            color: var(--cor-principal);
+            font-size: 0.7em;
+            padding: 3px 8px;
+            border-radius: 0 0 4px 0;
+            font-weight: bold;
+        }
+
+        .book-info-novidade h3 {
+            font-size: 1em;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .book-info-novidade p {
+            font-size: 0.9em;
+            color: var(--cor-secundaria);
+        }
+
+        .section-title {
+            text-align: center;
+            padding: 60px 0 10px;
+            font-size: 2em;
+            font-weight: bold;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--cor-secundaria);
+            font-size: 1.1em;
+        }
+
+        .catalogo-geral {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 20px;
+            margin-bottom: 80px;
+        }
+        
+        .moby-dick-item {
+            grid-column: 1 / -1; 
+            border-top: 1px solid var(--cor-borda);
+            padding-top: 20px;
+        }
+
+        .book-item-geral {
+            display: flex;
+            gap: 10px;
+            align-items: flex-start;
+        }
+        
+        .capa-mini-container {
+            width: 50px; 
+            height: 70px;
+            background-color: var(--cor-capa-placeholder);
+            flex-shrink: 0; 
+            border: 1px solid var(--cor-borda);
+            overflow: hidden;
+        }
+
+        .capa-mini-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .info-geral {
+            text-align: left; 
+        }
+
+        .info-geral h3 {
+            font-size: 1em;
+            margin-bottom: 5px;
+            line-height: 1.2;
+        }
+
+        .info-geral p {
+            font-size: 0.9em;
+            color: var(--cor-secundaria);
+            line-height: 1.2;
+        }
+
+        .info-geral span {
+            display: block;
+            font-size: 0.8em;
+            color: var(--cor-principal);
+            font-weight: bold;
+            margin-top: 5px;
+        }
+             
+        .footer {
+            border-top: 1px solid var(--cor-borda);
+            padding: 30px 5%;
+            text-align: center;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--cor-principal);
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 1024px) {
+            .novidades-section {
+                flex-direction: column;
+                align-items: center;
+                gap: 20px;
+            }
+            .titulo-novidades {
+                flex-basis: auto;
+                text-align: center;
+                font-size: 1.8em;
+                margin-top: 0; 
+            }
+            .novidades-livros-container {
+                justify-content: center;
+            }
+            .catalogo-novidades {
+                max-width: 100%;
+            }
+            .catalogo-geral {
+                grid-template-columns: repeat(3, 1fr); 
+            }
+        }
+
+        @media (max-width: 600px) {
+            .header-top {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .search-bar {
+                width: 100%;
+            }
+            .categories {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            .catalogo-novidades, .catalogo-geral {
+                grid-template-columns: 1fr; 
+            }
+            .moby-dick-item {
+                grid-column: 1 / 1; 
+            }
+            .footer-links {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                Biblioteca Virtual
+            </div>
+            <nav class="nav-links">
+                <a href="#">Home</a>
+                <a href="#">Acervo</a>
+                <a href="#">Salvos</a>
+                <a href="#">Expert Reader</a>
+            </nav>
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar">
+                <button aria-label="Pesquisar">&#128269;</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero-banner">
+        <h1>Catálogo de Livros</h1>
+        <p>Descubra novos títulos e explore nosso acervo.</p>
+        <div class="search-box">
+            <button>Buscar</button>
+        </div>
+        <div class="categories">
+            <a href="#">Romance</a>
+            <a href="#">Terror</a>
+            <a href="#">Tecnologia</a>
+            <a href="#">História</a>
+        </div>
+    </section>
+
+    <div class="content-wrapper">
+        <section class="novidades-section">
+            <div class="titulo-novidades">
+                Novidades
+            </div>
+            <div class="novidades-livros-container">
+                <div class="catalogo-novidades">
+                    
+                    <div class="book-card-novidade">
+                        <div class="capa-novidade-container">
+                            <img src="https://m.media-amazon.com/images/I/61DNtdvF9RL._SL1360_.jpg" alt="Capa do livro A Jornada"> 
+                            <span class="capa-novidade-tag">Novo</span>
+                        </div>
+                        <div class="book-info-novidade">
+                            <h3>A Jornada</h3>
+                            <p>Autora: Erin E. Moulton</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card-novidade">
+                        <div class="capa-novidade-container">
+                            <img src="https://m.media-amazon.com/images/I/91V7KmeP0OL._SL1500_.jpg" alt="Capa do livro o Mistério da Sala Secreta">
+                            <span class="capa-novidade-tag">Novo</span>
+                        </div>
+                        <div class="book-info-novidade">
+                            <h3>O Mistério</h3>
+                            <p>Autora: Lavínia Rocha</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card-novidade">
+                        <div class="capa-novidade-container">
+                            <img src="https://m.media-amazon.com/images/I/81SjsDoMZDL._SL1500_.jpg" alt="Capa do livro O Futuro é agora">
+                            <span class="capa-novidade-tag">Novo</span>
+                        </div>
+                        <div class="book-info-novidade">
+                            <h3>Tecnologias Futuras</h3>
+                            <p>Autor: Nexus Scriptum</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card-novidade">
+                        <div class="capa-novidade-container">
+                            <img src="https://m.media-amazon.com/images/I/71VSyOSD3rL._SL1274_.jpg" alt="Capa Contos de Terror do Tio Montague">
+                            <span class="capa-novidade-tag">Novo</span>
+                        </div>
+                        <div class="book-info-novidade">
+                            <h3>Histórias de Terror</h3>
+                            <p>Autor: Chris Priestley</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="section-title">Catálogo de Livros</h2>
+            <p class="section-subtitle">Explore nossa coleção de livros.</p>
+
+            <div class="catalogo-geral">
+                
+                <div class="book-item-geral">
+                    <div class="capa-mini-container">
+                        <img src="https://m.media-amazon.com/images/I/81MZ8OjmQrL._SL1296_.jpg" alt="Capa do livro O Senhor dos Anéis">
+                    </div>
+                    <div class="info-geral">
+                        <h3>O Senhor dos Anéis</h3>
+                        <p>Uma clássica hi...</p>
+                        <span>J.R.R. To...</span>
+                    </div>
+                </div>
+
+                <div class="book-item-geral">
+                    <div class="capa-mini-container">
+                        <img src="https://m.media-amazon.com/images/I/61M9jDcsl2L._SL1000_.jpg" alt="Capa do livro 1984">
+                    </div>
+                    <div class="info-geral">
+                        <h3>1984</h3>
+                        <p>Uma distopia ou...</p>
+                        <span>George...</span>
+                    </div>
+                </div>
+
+                <div class="book-item-geral">
+                    <div class="capa-mini-container">
+                        <img src="https://m.media-amazon.com/images/I/61yb1HHAIVL._SL1360_.jpg" alt="Capa do livro A Revolução dos Bichos">
+                    </div>
+                    <div class="info-geral">
+                        <h3>A Revolução dos Bichos</h3>
+                        <p>Uma fábula políti...</p>
+                        <span>George...</span>
+                    </div>
+                </div>
+
+                <div class="book-item-geral">
+                    <div class="capa-mini-container">
+                        <img src="https://m.media-amazon.com/images/I/71Xta4Nf7uL._SL1360_.jpg" alt="Capa do livro Orgulho e Preconceito">
+                    </div>
+                    <div class="info-geral">
+                        <h3>Orgulho e Preconceito</h3>
+                        <p>Uma crítica à socieda...</p>
+                        <span>Jane Au...</span>
+                    </div>
+                </div>
+
+                <div class="book-item-geral moby-dick-item">
+                    <div class="capa-mini-container">
+                        <img src="https://m.media-amazon.com/images/I/61kif0Iav7L._SL1000_.jpg" alt="Capa do livro Moby Dick">
+                    </div>
+                    <div class="info-geral">
+                        <h3>Moby Dick</h3>
+                        <p>A busca obsessiva de um homem por uma baleia.</p>
+                        <span>Herman Melville</span>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="#">Sobre nós</a>
+            <a href="#">Política de Privacidade</a>
+            <a href="#">Termos de Uso</a>
+            <a href="#">Contacte-Nos</a>
+        </div>
+    </footer>
+
+</body>
+</html>
