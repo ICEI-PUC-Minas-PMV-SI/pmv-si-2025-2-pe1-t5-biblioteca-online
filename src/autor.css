@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background-color: #fff;
+  color: #222;
+  line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar .logo {
+  font-weight: 700;
+}
+
+.menu a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+
+.search input {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+/* CONTEÚDO */
+.autor-container {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.titulo h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.titulo p {
+  color: #555;
+}
+
+/* PERFIL */
+.perfil {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 2rem;
+}
+
+.foto {
+  width: 100px;
+  height: 100px;
+  background: #ddd;
+  border-radius: 50%;
+}
+
+.descricao h2 {
+  margin-bottom: 0.3rem;
+}
+
+.tag {
+  display: inline-block;
+  background: #eee;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  margin-right: 0.4rem;
+  color: #555;
+}
+
+/* BIOGRAFIA */
+.biografia {
+  margin-top: 3rem;
+}
+
+.bio-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.bio-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 1rem;
+  flex: 1;
+  min-width: 250px;
+}
+
+.bio-foto {
+  width: 60px;
+  height: 60px;
+  background: #ccc;
+  border-radius: 10px;
+}
+
+/* OBRAS */
+.obras {
+  margin-top: 3rem;
+}
+
+.lista-obras {
+  list-style: none;
+  margin-top: 1rem;
+}
+
+.lista-obras li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fafafa;
+  border: 1px solid #eee;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.livro-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.livro-info img {
+  width: 40px;
+  height: 40px;
+}
+
+.ano {
+  font-weight: 600;
+  color: #333;
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.footer-links a {
+  margin: 0 1rem;
+  text-decoration: none;
+  color: #555;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+  .perfil {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .bio-content {
+    flex-direction: column;
+  }
+
+  .lista-obras li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .ano {
+    margin-top: 0.5rem;
+  }
+
+  .menu {
+    display: none;
+  }
+}
