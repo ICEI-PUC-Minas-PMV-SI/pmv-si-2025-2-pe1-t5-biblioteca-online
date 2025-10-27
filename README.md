@@ -14,7 +14,6 @@ O projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online,
 * Bruno Felipe Gomes
 * Carlos Costa
 * Elias Drates
-* Junio Gabriel
 * Simone Torres
 * Jennifer Daleffi
 
