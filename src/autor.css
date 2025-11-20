@@ -195,3 +195,39 @@ footer {
     display: none;
   }
 }
+
+/* MODO ESCURO */
+body.dark {
+  background: #1e1e1e;
+  color: #fff;
+}
+
+body.dark .navbar,
+body.dark footer {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+body.dark .menu a,
+body.dark .footer-links a {
+  color: #fff;
+}
+
+body.dark .lista-obras li {
+  background: #333;
+  border-color: #555;
+}
+
+body.dark .bio-card {
+  background: #333;
+}
+
+.bio-text {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+}
+
+.bio-text.ativo {
+  max-height: 500px;
+}
