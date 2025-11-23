@@ -11,7 +11,6 @@ body {
   line-height: 1.6;
 }
 
-/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -37,7 +36,6 @@ body {
   border-radius: 6px;
 }
 
-/* CONTEÚDO */
 .autor-container {
   max-width: 1000px;
   margin: 2rem auto;
@@ -58,7 +56,6 @@ body {
   color: #555;
 }
 
-/* PERFIL */
 .perfil {
   display: flex;
   align-items: center;
@@ -88,7 +85,6 @@ body {
   color: #555;
 }
 
-/* BIOGRAFIA */
 .biografia {
   margin-top: 3rem;
 }
@@ -119,7 +115,6 @@ body {
   border-radius: 10px;
 }
 
-/* OBRAS */
 .obras {
   margin-top: 3rem;
 }
@@ -157,7 +152,6 @@ body {
   color: #333;
 }
 
-/* FOOTER */
 footer {
   border-top: 1px solid #ddd;
   padding: 1rem;
@@ -171,7 +165,6 @@ footer {
   color: #555;
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .perfil {
     flex-direction: column;
@@ -196,7 +189,6 @@ footer {
   }
 }
 
-/* MODO ESCURO */
 body.dark {
   background: #1e1e1e;
   color: #fff;
@@ -223,11 +215,26 @@ body.dark .bio-card {
 }
 
 .bio-text {
-  max-height: 0;
-  overflow: hidden;
-  transition: 0.3s ease-in-out;
+  max-height: 200px;     
+  overflow-y: auto;       
+  padding-right: 10px;    
 }
 
 .bio-text.ativo {
-  max-height: 500px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.bio-text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.bio-text::-webkit-scrollbar-track {
+  background: #eee;
+  border-radius: 10px;
+}
+
+.bio-text::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 10px;
 }
