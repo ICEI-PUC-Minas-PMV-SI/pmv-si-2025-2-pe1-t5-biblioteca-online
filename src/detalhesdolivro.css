@@ -96,6 +96,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .info-livro {
@@ -129,8 +130,7 @@ body {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-.description{
-    margin-top: 120px;
+.description {
     max-width: 520px;
     border: 1px solid lightgray; 
     align-items: center;
@@ -211,6 +211,9 @@ body {
 .stars span {
     color: #1A2B48;
     font-size: 16px;
+    cursor: pointer;
+    font-size: 24px; 
+    transition: color 0.2s ease-in-out;
 }
 
 .stars .empty {
@@ -349,4 +352,53 @@ body {
 
 .footere a:hover {
     color: #FF6B00;
+}
+
+/* Adicionais */
+/* Botões */
+.card-action.active {
+    background-color: #f68b3e;
+    transform: scale(1.1);
+}
+
+.card-action.active p,
+.card-action.active i {
+    color: #FFFFFF;
+    stroke: #FFFFFF;
+}
+
+/* Abas */
+.tab-content {
+    display: none;
+    margin-top: 20px;
+    border: 1px solid lightgray;
+    padding: 15px;
+    border-radius: 4px;
+}
+
+.tab-content.active-content {
+    display: block;
+}
+
+.tab-container .tag.active-tag {
+    background-color: #FF6B00;
+    color: #FFFFFF;
+    font-weight: bold;
+}
+
+.tab-container .tags .tag {
+    cursor: pointer;
+}
+
+.tab-container {
+    margin-top: 120px;
+}
+
+@keyframes piscar {
+  50% {
+    opacity: 0.5;
+  }
+}
+.animar-clique {
+  animation: piscar 0.3s ease;
 }
