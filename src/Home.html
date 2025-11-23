@@ -391,9 +391,77 @@
             <a href="#">Política de Privacidade</a>
             <a href="#">Termos de Uso</a>
             <a href="#">Contacte-Nos</a>
-        </div>
+        </div><script>
+  
+    const biblioteca = {
+        "as crônicas de gelo e fogo": "https://editoraviseu.com/wp-content/uploads/2023/03/Livro-A-Guerra-dos-Tronos-As-Cronicas-de-Gelo-e-Fogo.webp",
+        "o mito da beleza": "https://m.media-amazon.com/images/I/8177asxnGGL._SL1500_.jpg",
+        "é assim que acaba": "https://m.media-amazon.com/images/I/91r5G8RxqfL._SY466_.jpg",
+        "flores partidas": "https://m.media-amazon.com/images/I/81vrJlJ-udL._SY466_.jpg",
+        "o sol é para todos": "https://m.media-amazon.com/images/I/91WKPd60P4L._SY466_.jpg",
+        "é assim que começa": "https://http2.mlstatic.com/D_NQ_NP_2X_919409-MLU72972327275_112023-F.webp"
+    };
+
+    
+    const btnBuscar = document.querySelector(".search-bar button");
+    const campoBuscar = document.querySelector(".search-bar input");
+
+    btnBuscar.addEventListener("click", () => {
+        const termo = campoBuscar.value.trim().toLowerCase();
+
+        let painel = document.getElementById("painel-resultado");
+        if (!painel) {
+            painel = document.createElement("div");
+            painel.id = "painel-resultado";
+            painel.style.textAlign = "center";
+            painel.style.padding = "30px";
+            document.body.appendChild(painel);
+        }
+
+        if (biblioteca[termo]) {
+            painel.innerHTML = `
+                <h2>Resultado da Pesquisa</h2>
+                <img src="${biblioteca[termo]}" width="250" style="border-radius:6px;">
+                <p><strong>${termo.toUpperCase()}</strong></p>
+            `;
+        } else {
+            painel.innerHTML = "<p>Nenhum livro encontrado.</p>";
+        }
+    });
+   
+    
+    const btnComecar = document.querySelector(".hero-banner button");
+    const sessaoLeitura = document.querySelector(".continuar-leitura");
+
+    btnComecar.addEventListener("click", () => {
+        sessaoLeitura.scrollIntoView({ behavior: "smooth" });
+    });
+
+    const menuLinks = document.querySelectorAll(".nav-links a");
+
+    menuLinks[0].addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+    menuLinks[1].addEventListener("click", () => alert("Página do Acervo ainda em desenvolvimento."));
+    menuLinks[2].addEventListener("click", () => alert("Seus livros salvos aparecerão aqui futuramente."));
+    menuLinks[3].addEventListener("click", () => {
+        document.querySelector(".recomendacoes-grid").scrollIntoView({ behavior: "smooth" });
+    });
+
+   
+    const footerLinks = document.querySelectorAll(".footer-links a");
+
+    footerLinks[0].addEventListener("click", () => alert("Sobre nós: A Biblioteca Online visa oferecer aos leitores acesso rápido e fácil ao acervo disponível. "));
+    footerLinks[1].addEventListener("click", () => alert("Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as informações pessoais dos usuários da nossa biblioteca online. Ao utilizar nossos serviços, você concorda com os termos aqui descritos."));
+    footerLinks[2].addEventListener("click", () => alert("Ao acessar e utilizar a biblioteca online, você concorda com os termos e condições descritos neste documento. Caso não concorde, não utilize nossos serviços."));
+    footerLinks[3].addEventListener("click", () => alert("Entre em contato pelo e-mail: suporte@bibliotecavirtual.com"));
+
+    const heroSearchButton = document.querySelector('.search-bar button');
+    heroSearchButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Simulando a ação de Buscar (navegação para a página de busca principal).');
+    });
+</script>
+
     </footer>
 
 </body>
 </html>
-
