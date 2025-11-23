@@ -42,11 +42,28 @@
                     <span class="tag">Aventura</span>
                     <span class="tag">Ficção Científica</span>
                 </div>
-                <div class="description">
-                    <h1>Descrição</h1>
-                    <h5>Uma jornada fascinante.</h5>
-                    <p>Este livro nos conduz através de uma narrativa intrigante, cheia de reviravoltas e personagens...</p>
-                </div>
+                <div class="tab-container">
+                    <div class="tags">
+                        <span class="tag active-tag" data-tab="descricao">Descrição</span>
+                        <span class="tag" data-tab="avaliacoes">Avaliações</span>
+                        <span class="tag" data-tab="detalhes">Detalhes</span>
+                    </div>
+
+                    <div id="descricao" class="tab-content active-content">
+                        <h5>Uma jornada fascinante.</h5>
+                        <p>Este livro nos conduz através de uma narrativa intrigante, cheia de reviravoltas e personagens cativantes. Uma leitura obrigatória para amantes de fantasia.</p>
+                    </div>
+                    <div id="avaliacoes" class="tab-content">
+                        <h5>O que os leitores dizem:</h5>
+                        <p>"Simplesmente incrível! Não consegui parar de ler." - Leitor 1</p>
+                        <p>"Uma obra-prima da ficção moderna." - Crítico Literário</p>
+                    </div>
+                    <div id="detalhes" class="tab-content">
+                        <h5>Informações Técnicas:</h5>
+                        <p><strong>Páginas:</strong> 320</p>
+                        <p><strong>Editora:</strong> Editora Fantástica</p>
+                        <p><strong>Ano de Publicação:</strong> 2025</p>
+                    </div>
             </div>
         </section>
 
@@ -124,9 +141,102 @@
         <a href="#">Contacte-Nos</a>
     </footer>
 
+
+
+
+
     <script>
-        feather.replace();
-    </script>
+    feather.replace();
+
+    // Botões de Ação Interativos
+
+    const botoesAcao = document.querySelectorAll('.list-actions .card-action');
+
+    botoesAcao.forEach(botao => {
+        botao.addEventListener('click', () => {
+            const estaAtivo = botao.classList.contains('active');
+
+            if (estaAtivo) {
+                botao.classList.remove('active');
+                const icone = botao.querySelector('i');
+                const texto = botao.querySelector('p');
+                texto.textContent = botao.dataset.originalText;
+            } else {
+                botao.classList.add('active');
+                const icone = botao.querySelector('i');
+                const texto = botao.querySelector('p');
+                
+                botao.dataset.originalText = texto.textContent;
+                
+                texto.textContent = 'Adicionado!';
+            }
+        });
+    });
+
+    // Sistema de Avaliação com Estrelas
+    const estrelas = document.querySelectorAll('.stars span');
+    const containerEstrelas = document.querySelector('.stars');
+
+    // Pintar as estrelas até um certo índice
+        const pintarEstrelas = (indiceMax) => {
+            estrelas.forEach((estrela, indice) => {
+                if (indice <= indiceMax) {
+                    estrela.classList.remove('empty');
+                } else {
+                 estrela.classList.add('empty');
+                }
+            });
+        };
+
+    // Adiciona os eventos a cada estrela
+        estrelas.forEach((estrela, indice) => {
+            estrela.addEventListener('mouseover', () => {
+             pintarEstrelas(indice);
+            });
+
+            estrela.addEventListener('click', () => {
+               containerEstrelas.dataset.avaliacao = indice;
+               estrela.classList.add('animar-clique');
+            });
+
+            estrela.addEventListener('animationend', () => {
+            estrela.classList.remove('animar-clique');
+            });
+        });
+
+    // Quando o mouse sai da área das estrelas
+        containerEstrelas.addEventListener('mouseleave', () => {
+            const avaliacaoSalva = containerEstrelas.dataset.avaliacao;
+            if (avaliacaoSalva !== undefined) {
+                pintarEstrelas(parseInt(avaliacaoSalva));
+            } else {
+                pintarEstrelas(3);
+            }
+        });
+
+
+
+    // --- Funcionalidade 3: Sistema de Abas ---
+    const abas = document.querySelectorAll('.tab-container .tags .tag');
+
+    abas.forEach(aba => {
+        aba.addEventListener('click', () => {
+            const targetId = aba.dataset.tab;
+            const targetContent = document.getElementById(targetId);
+
+            abas.forEach(a => a.classList.remove('active-tag'));
+            aba.classList.add('active-tag');
+
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active-content');
+            });
+
+            if (targetContent) {
+                targetContent.classList.add('active-content');
+            }
+        });
+    });
+</script>
 
 </body>
 </html>
