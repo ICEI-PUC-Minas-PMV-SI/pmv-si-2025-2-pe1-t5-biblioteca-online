@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Virtual - Catálogo V3</title>
+    <title>Biblioteca Virtual - Catálogo V4 (Interativo e Revisado)</title>
     <style>
 
         :root {
@@ -15,6 +15,7 @@
             --cor-borda: #dddddd;
             --cor-capa-placeholder: #e9e9e9;
             --cor-novo-tag: #cccccc;
+            --cor-clicavel: #007bff; 
         }
     
         
@@ -23,6 +24,9 @@
             background-color: var(--cor-fundo-body);
             color: var(--cor-principal);
             line-height: 1.6;
+            text-align: center; 
+            margin: 0;
+            padding: 0;
         }
       
         .content-wrapper {
@@ -44,11 +48,17 @@
             font-weight: bold;
         }
 
-      
         .nav-links a {
             text-decoration: none;
             color: var(--cor-principal);
             font-size: 0.9em;
+            margin-left: 15px; 
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cor-clicavel);
         }
 
         .search-bar {
@@ -72,6 +82,11 @@
             cursor: pointer;
             color: var(--cor-secundaria);
             font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        .search-bar button:hover {
+             color: var(--cor-clicavel);
         }
         
         .hero-banner {
@@ -112,6 +127,10 @@
             transition: background-color 0.3s;
         }
 
+        .search-box button:hover {
+            background-color: var(--cor-clicavel);
+        }
+      
         .categories {
             display: flex;
             justify-content: center;
@@ -126,9 +145,15 @@
             border-radius: 4px;
             font-size: 0.9em;
             opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s, background-color 0.3s;
+            cursor: pointer; 
         }
-       
+
+        .categories a:hover {
+            opacity: 1;
+            background-color: var(--cor-acento);
+        }
+        
         .novidades-section {
             display: flex;
             padding-top: 60px; 
@@ -145,16 +170,18 @@
             text-align: left; 
             flex-shrink: 0; 
             margin-top: 30px; 
+            text-align: right; 
         }
 
         .catalogo-novidades {
             flex-grow: 1; 
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px 20px;          
+            gap: 30px 20px; 
             max-width: 400px;
             justify-self: end;
             margin-left: auto;
+            text-align: left; 
         }
         
         .novidades-livros-container {
@@ -167,6 +194,12 @@
             display: flex;
             flex-direction: column;
             gap: 10px;
+            cursor: pointer; 
+            transition: transform 0.2s;
+        }
+
+        .book-card-novidade:hover {
+            transform: translateY(-5px);
         }
 
         .capa-novidade-container {
@@ -230,6 +263,7 @@
             grid-template-columns: repeat(4, 1fr); 
             gap: 20px;
             margin-bottom: 80px;
+            text-align: left; 
         }
         
         .moby-dick-item {
@@ -242,8 +276,16 @@
             display: flex;
             gap: 10px;
             align-items: flex-start;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            padding: 5px;
+            border-radius: 4px;
         }
         
+        .book-item-geral:hover {
+            background-color: #f0f0f0;
+        }
+
         .capa-mini-container {
             width: 50px; 
             height: 70px;
@@ -283,7 +325,7 @@
             font-weight: bold;
             margin-top: 5px;
         }
-             
+        
         .footer {
             border-top: 1px solid var(--cor-borda);
             padding: 30px 5%;
@@ -300,6 +342,12 @@
             text-decoration: none;
             color: var(--cor-principal);
             font-size: 0.9em;
+            cursor: pointer; 
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--cor-clicavel);
         }
 
         @media (max-width: 1024px) {
@@ -307,6 +355,7 @@
                 flex-direction: column;
                 align-items: center;
                 gap: 20px;
+                text-align: center;
             }
             .titulo-novidades {
                 flex-basis: auto;
@@ -319,6 +368,8 @@
             }
             .catalogo-novidades {
                 max-width: 100%;
+                margin-left: initial;
+                justify-content: center;
             }
             .catalogo-geral {
                 grid-template-columns: repeat(3, 1fr); 
@@ -332,6 +383,15 @@
             }
             .search-bar {
                 width: 100%;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-links a {
+                margin-left: 0;
             }
             .categories {
                 flex-wrap: wrap;
@@ -358,14 +418,14 @@
                 Biblioteca Virtual
             </div>
             <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Acervo</a>
-                <a href="#">Salvos</a>
-                <a href="#">Expert Reader</a>
+                <a href="#" data-action="search" data-term="Home">Home</a>
+                <a href="#" data-action="search" data-term="Acervo">Acervo</a>
+                <a href="#" data-action="search" data-term="Salvos">Salvos</a>
+                <a href="#catalogo" data-action="navigate" data-term="Catálogo de Livros">Expert Reader</a> 
             </nav>
             <div class="search-bar">
-                <input type="text" placeholder="Pesquisar">
-                <button aria-label="Pesquisar">&#128269;</button>
+                <input type="text" id="searchInput" placeholder="Pesquisar">
+                <button id="searchButton" aria-label="Pesquisar">&#128269;</button>
             </div>
         </div>
     </header>
@@ -374,13 +434,13 @@
         <h1>Catálogo de Livros</h1>
         <p>Descubra novos títulos e explore nosso acervo.</p>
         <div class="search-box">
-            <button>Buscar</button>
+             <button id="heroSearchButton">Buscar</button>
         </div>
         <div class="categories">
-            <a href="#">Romance</a>
-            <a href="#">Terror</a>
-            <a href="#">Tecnologia</a>
-            <a href="#">História</a>
+            <a href="#" data-action="search" data-term="Romance">Romance</a>
+            <a href="#" data-action="search" data-term="Terror">Terror</a>
+            <a href="#" data-action="search" data-term="Tecnologia">Tecnologia</a>
+            <a href="#" data-action="search" data-term="História">História</a>
         </div>
     </section>
 
@@ -392,7 +452,7 @@
             <div class="novidades-livros-container">
                 <div class="catalogo-novidades">
                     
-                    <div class="book-card-novidade">
+                    <div class="book-card-novidade" data-action="view" data-book-title="A Jornada">
                         <div class="capa-novidade-container">
                             <img src="https://m.media-amazon.com/images/I/61DNtdvF9RL._SL1360_.jpg" alt="Capa do livro A Jornada"> 
                             <span class="capa-novidade-tag">Novo</span>
@@ -403,7 +463,7 @@
                         </div>
                     </div>
 
-                    <div class="book-card-novidade">
+                    <div class="book-card-novidade" data-action="view" data-book-title="O Mistério">
                         <div class="capa-novidade-container">
                             <img src="https://m.media-amazon.com/images/I/91V7KmeP0OL._SL1500_.jpg" alt="Capa do livro o Mistério da Sala Secreta">
                             <span class="capa-novidade-tag">Novo</span>
@@ -414,7 +474,7 @@
                         </div>
                     </div>
 
-                    <div class="book-card-novidade">
+                    <div class="book-card-novidade" data-action="view" data-book-title="Tecnologias Futuras">
                         <div class="capa-novidade-container">
                             <img src="https://m.media-amazon.com/images/I/81SjsDoMZDL._SL1500_.jpg" alt="Capa do livro O Futuro é agora">
                             <span class="capa-novidade-tag">Novo</span>
@@ -425,7 +485,7 @@
                         </div>
                     </div>
 
-                    <div class="book-card-novidade">
+                    <div class="book-card-novidade" data-action="view" data-book-title="Histórias de Terror">
                         <div class="capa-novidade-container">
                             <img src="https://m.media-amazon.com/images/I/71VSyOSD3rL._SL1274_.jpg" alt="Capa Contos de Terror do Tio Montague">
                             <span class="capa-novidade-tag">Novo</span>
@@ -440,13 +500,12 @@
             </div>
         </section>
 
-        <section>
-            <h2 class="section-title">Catálogo de Livros</h2>
+        <section id="catalogo"> <h2 class="section-title">Catálogo de Livros</h2>
             <p class="section-subtitle">Explore nossa coleção de livros.</p>
 
             <div class="catalogo-geral">
                 
-                <div class="book-item-geral">
+                <div class="book-item-geral" data-action="view" data-book-title="O Senhor dos Anéis">
                     <div class="capa-mini-container">
                         <img src="https://m.media-amazon.com/images/I/81MZ8OjmQrL._SL1296_.jpg" alt="Capa do livro O Senhor dos Anéis">
                     </div>
@@ -457,7 +516,7 @@
                     </div>
                 </div>
 
-                <div class="book-item-geral">
+                <div class="book-item-geral" data-action="view" data-book-title="1984">
                     <div class="capa-mini-container">
                         <img src="https://m.media-amazon.com/images/I/61M9jDcsl2L._SL1000_.jpg" alt="Capa do livro 1984">
                     </div>
@@ -468,7 +527,7 @@
                     </div>
                 </div>
 
-                <div class="book-item-geral">
+                <div class="book-item-geral" data-action="view" data-book-title="A Revolução dos Bichos">
                     <div class="capa-mini-container">
                         <img src="https://m.media-amazon.com/images/I/61yb1HHAIVL._SL1360_.jpg" alt="Capa do livro A Revolução dos Bichos">
                     </div>
@@ -479,7 +538,7 @@
                     </div>
                 </div>
 
-                <div class="book-item-geral">
+                <div class="book-item-geral" data-action="view" data-book-title="Orgulho e Preconceito">
                     <div class="capa-mini-container">
                         <img src="https://m.media-amazon.com/images/I/71Xta4Nf7uL._SL1360_.jpg" alt="Capa do livro Orgulho e Preconceito">
                     </div>
@@ -490,7 +549,7 @@
                     </div>
                 </div>
 
-                <div class="book-item-geral moby-dick-item">
+                <div class="book-item-geral moby-dick-item" data-action="view" data-book-title="Moby Dick">
                     <div class="capa-mini-container">
                         <img src="https://m.media-amazon.com/images/I/61kif0Iav7L._SL1000_.jpg" alt="Capa do livro Moby Dick">
                     </div>
@@ -507,12 +566,96 @@
 
     <footer class="footer">
         <div class="footer-links">
-            <a href="#">Sobre nós</a>
-            <a href="#">Política de Privacidade</a>
-            <a href="#">Termos de Uso</a>
-            <a href="#">Contacte-Nos</a>
+            <a href="#" data-action="footer" data-term="Sobre Nós">Sobre Nós</a>
+            <a href="#" data-action="footer" data-term="Política de Privacidade">Política de Privacidade</a>
+            <a href="#" data-action="footer" data-term="Termos de Uso">Termos de Uso</a>
+            <a href="#" data-action="footer" data-term="Contacte-Nos">Contacte-Nos</a>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('searchInput');
+            const searchButton = document.getElementById('searchButton');
+            const heroSearchButton = document.getElementById('heroSearchButton');
+      
+            if (searchInput) {
+                searchInput.placeholder = "Pesquisar";
+            }
+            searchButton.addEventListener('click', (e) => {
+                e.preventDefault(); 
+                const searchTerm = searchInput.value.trim();
+                if (searchTerm) {
+   
+                    alert(`Item pesquisado: ${searchTerm} (simulando abertura)`);
+                    searchInput.value = ''; 
+                } else {
+                    alert('Por favor, digite um termo para Pesquisar.');
+                }
+            });
+
+            const actionLinks = document.querySelectorAll('.nav-links a, .categories a');
+            
+            actionLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault(); 
+                    const action = link.getAttribute('data-action');
+                    const term = link.getAttribute('data-term');
+
+                    if (action === 'search') {
+   
+                        alert(`Item pesquisado: ${term} (simulando abertura)`);
+                    } else if (action === 'navigate' && term === 'Catálogo de Livros') {
+ 
+                        const catalogoSection = document.getElementById('catalogo');
+                        if (catalogoSection) {
+                            catalogoSection.scrollIntoView({ behavior: 'smooth' });
+                            alert('Redirecionando para: Catálogo de Livros');
+                        } else {
+                            alert('Erro: Seção Catálogo de Livros não encontrada.');
+                        }
+                    } else {
+ 
+                        alert(`Ação: ${action} com termo: ${term}`);
+                    }
+                });
+            });
+
+            heroSearchButton.addEventListener('click', (e) => {
+                e.preventDefault();
+  
+                alert('Simulando a ação de Buscar (navegação para a página de busca principal).');
+            });
+
+            const bookElements = document.querySelectorAll('.book-card-novidade, .book-item-geral');
+
+            bookElements.forEach(bookElement => {
+                bookElement.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const bookTitle = bookElement.getAttribute('data-book-title');
+                    
+                    if (bookTitle) {
+  
+                        alert(`Livro aberto: ${bookTitle}`);
+                    }
+                });
+            });
+
+            const footerLinks = document.querySelectorAll('.footer-links a');
+
+            footerLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const term = link.getAttribute('data-term');
+                    
+                    if (term) {
+  
+                        alert(`Exibindo conteúdo de: ${term}`);
+                    }
+                });
+            });
+        });
+    </script>
 
 </body>
 </html>
