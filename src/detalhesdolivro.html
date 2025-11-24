@@ -10,22 +10,25 @@
 </head>
 <body>
 
-    <header class="header">
-        <div class="soon">Biblioteca Virtual</div>
-        <div class="header-right">
-            <nav' class="menu">
-                <a href="#">Home</a>
-                <a href="#">Acervo</a>
-                <a href="#">Salvos</a>
-                <a href="#">Expert Reader</a>
-            </nav>
-            <div class="search">
-                <input type="text" placeholder="Pesquisar" class="search-box">
-                <div class="search-icon">
-                    <i data-feather="search"></i>
-                </div>
-            </div>
-        </div>
+    <header>
+        <h1>Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./catálogodelivros.html">Acervo</a></li>
+                <li><a href="./favoritos.html">Salvos</a></li>
+                <li><a href="./catálogodelivros.html">Expert Reader</a></li>
+                <li>
+                    <div class="search-container">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Pesquisar">
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <main class="main-content">
@@ -145,98 +148,161 @@
 
 
 
+    <!-- Scripts centralizados -->
+    <script src="./dados.js"></script>
+    <script src="./app.js"></script>
     <script>
     feather.replace();
 
-    // Botões de Ação Interativos
+    document.addEventListener('DOMContentLoaded', () => {
+        // Carregar dados do livro pela URL
+        const livroId = APP.getParametroURL('id') || 1;
+        const livro = BIBLIOTECA.getLivroById(livroId);
+        const autor = livro ? BIBLIOTECA.getAutorById(livro.autorId) : null;
 
-    const botoesAcao = document.querySelectorAll('.list-actions .card-action');
+        if (livro) {
+            // Atualizar titulo e info
+            document.querySelector('.info-livro h1').textContent = livro.titulo;
+            document.querySelector('.info-livro > p').textContent = livro.descricao;
+            document.title = `${livro.titulo} - Biblioteca Virtual`;
 
-    botoesAcao.forEach(botao => {
-        botao.addEventListener('click', () => {
-            const estaAtivo = botao.classList.contains('active');
+            // Atualizar capa
+            const capaDiv = document.querySelector('.maincover-book');
+            capaDiv.innerHTML = `<img src="${livro.capa}" alt="${livro.titulo}" style="width: 100%; height: 100%; object-fit: cover; border-radius: 8px;">`;
 
-            if (estaAtivo) {
-                botao.classList.remove('active');
-                const icone = botao.querySelector('i');
-                const texto = botao.querySelector('p');
-                texto.textContent = botao.dataset.originalText;
-            } else {
-                botao.classList.add('active');
-                const icone = botao.querySelector('i');
-                const texto = botao.querySelector('p');
-                
-                botao.dataset.originalText = texto.textContent;
-                
-                texto.textContent = 'Adicionado!';
+            // Atualizar tags
+            const tagsDiv = document.querySelector('.info-livro .tags');
+            tagsDiv.innerHTML = livro.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+
+            // Atualizar descricao
+            document.querySelector('#descricao p').textContent = livro.descricao;
+
+            // Atualizar detalhes
+            document.querySelector('#detalhes').innerHTML = `
+                <h5>Informações Técnicas:</h5>
+                <p><strong>Páginas:</strong> ${livro.paginas}</p>
+                <p><strong>Ano de Publicação:</strong> ${livro.ano}</p>
+                <p><strong>Gênero:</strong> ${livro.genero}</p>
+            `;
+
+            // Atualizar autor
+            if (autor) {
+                document.querySelector('.name').textContent = autor.nome;
+                const autorCard = document.querySelector('.card-author');
+                autorCard.style.cursor = 'pointer';
+                autorCard.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    APP.irParaAutor(autor.id);
+                });
+
+                // Foto do autor
+                const fotoAutor = document.querySelector('.image-author');
+                fotoAutor.style.backgroundImage = `url(${autor.foto})`;
+                fotoAutor.style.backgroundSize = 'cover';
+                fotoAutor.style.backgroundPosition = 'center';
             }
-        });
-    });
 
-    // Sistema de Avaliação com Estrelas
-    const estrelas = document.querySelectorAll('.stars span');
-    const containerEstrelas = document.querySelector('.stars');
+            // Atualizar estrelas
+            const starsContainer = document.querySelector('.stars');
+            starsContainer.innerHTML = '';
+            for (let i = 0; i < 5; i++) {
+                const span = document.createElement('span');
+                span.textContent = '★';
+                if (i >= livro.avaliacao) span.classList.add('empty');
+                starsContainer.appendChild(span);
+            }
 
-    // Pintar as estrelas até um certo índice
-        const pintarEstrelas = (indiceMax) => {
-            estrelas.forEach((estrela, indice) => {
-                if (indice <= indiceMax) {
-                    estrela.classList.remove('empty');
+            // Mais livros do autor
+            if (autor) {
+                const outrosLivros = BIBLIOTECA.getLivrosByAutorId(autor.id).filter(l => l.id !== livro.id);
+                const listBooks = document.querySelector('.list-books');
+                listBooks.innerHTML = '';
+
+                outrosLivros.slice(0, 3).forEach(outroLivro => {
+                    const btn = document.createElement('button');
+                    btn.className = 'card-book';
+                    btn.innerHTML = `
+                        <div class="bookcover-others" style="background-image: url(${outroLivro.capa}); background-size: cover; background-position: center;">
+                        </div>
+                        <p>${outroLivro.titulo}</p>
+                    `;
+                    btn.addEventListener('click', () => APP.irParaLivro(outroLivro.id));
+                    listBooks.appendChild(btn);
+                });
+
+                if (outrosLivros.length === 0) {
+                    listBooks.innerHTML = '<p>Nenhum outro livro deste autor no catálogo.</p>';
+                }
+            }
+        }
+
+        // Botoes de acao
+        const botoesAcao = document.querySelectorAll('.list-actions .card-action');
+        const acoes = ['lerDepois', 'ler', 'estudos'];
+
+        botoesAcao.forEach((botao, index) => {
+            botao.addEventListener('click', () => {
+                const acao = acoes[index];
+
+                if (acao === 'ler') {
+                    APP.irParaLeitura(livroId);
+                    return;
+                }
+
+                const estaAtivo = botao.classList.contains('active');
+                if (estaAtivo) {
+                    botao.classList.remove('active');
+                    botao.querySelector('p').textContent = botao.dataset.originalText;
                 } else {
-                 estrela.classList.add('empty');
+                    botao.classList.add('active');
+                    botao.dataset.originalText = botao.querySelector('p').textContent;
+                    botao.querySelector('p').textContent = 'Adicionado!';
+
+                    if (acao === 'lerDepois') FAVORITOS.addLerDepois(parseInt(livroId));
+                    if (acao === 'estudos') FAVORITOS.addEstudos(parseInt(livroId));
                 }
             });
-        };
+        });
 
-    // Adiciona os eventos a cada estrela
-        estrelas.forEach((estrela, indice) => {
-            estrela.addEventListener('mouseover', () => {
-             pintarEstrelas(indice);
-            });
-
-            estrela.addEventListener('click', () => {
-               containerEstrelas.dataset.avaliacao = indice;
-               estrela.classList.add('animar-clique');
-            });
-
-            estrela.addEventListener('animationend', () => {
-            estrela.classList.remove('animar-clique');
+        // Navegacao
+        document.querySelectorAll('.menu a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const texto = link.textContent.trim().toLowerCase();
+                if (texto === 'home') APP.irParaHome();
+                else if (texto === 'acervo') APP.irParaCatalogo();
+                else if (texto === 'salvos') APP.irParaFavoritos();
+                else if (texto === 'expert reader') APP.irParaCatalogo();
             });
         });
 
-    // Quando o mouse sai da área das estrelas
-        containerEstrelas.addEventListener('mouseleave', () => {
-            const avaliacaoSalva = containerEstrelas.dataset.avaliacao;
-            if (avaliacaoSalva !== undefined) {
-                pintarEstrelas(parseInt(avaliacaoSalva));
-            } else {
-                pintarEstrelas(3);
-            }
-        });
-
-
-
-    // --- Funcionalidade 3: Sistema de Abas ---
-    const abas = document.querySelectorAll('.tab-container .tags .tag');
-
-    abas.forEach(aba => {
-        aba.addEventListener('click', () => {
-            const targetId = aba.dataset.tab;
-            const targetContent = document.getElementById(targetId);
-
-            abas.forEach(a => a.classList.remove('active-tag'));
-            aba.classList.add('active-tag');
-
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.classList.remove('active-content');
+        // Busca
+        const searchInput = document.getElementById('searchInput');
+        if (searchInput) {
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    e.preventDefault();
+                    const termo = searchInput.value.trim();
+                    if (termo) APP.realizarBusca(termo);
+                }
             });
+        }
 
-            if (targetContent) {
-                targetContent.classList.add('active-content');
-            }
+        // Sistema de Abas
+        const abas = document.querySelectorAll('.tab-container .tags .tag');
+        abas.forEach(aba => {
+            aba.addEventListener('click', () => {
+                const targetId = aba.dataset.tab;
+                const targetContent = document.getElementById(targetId);
+                abas.forEach(a => a.classList.remove('active-tag'));
+                aba.classList.add('active-tag');
+                document.querySelectorAll('.tab-content').forEach(content => {
+                    content.classList.remove('active-content');
+                });
+                if (targetContent) targetContent.classList.add('active-content');
+            });
         });
     });
-</script>
-
+    </script>
 </body>
 </html>

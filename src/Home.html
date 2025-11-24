@@ -4,305 +4,111 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca Virtual - Home</title>
+    <link rel="stylesheet" href="./styles.css">
     <style>
-        
-        :root {
-            --cor-principal: #333333;
-            --cor-secundaria: #888888;
-            --cor-fundo-header: #666666;
-            --cor-fundo-body: #ffffff;
-            --cor-acento: #000000;
-            --cor-capa: #e9e9e9; 
-            --cor-tag-novo: #333333;
-            --cor-tag-popular: #888888;
-            --cor-tag-classico: #666666;
-            --cor-tag-destaque: #aaaaaa;
-        }
-
-        
-      
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--cor-fundo-body);
-            color: var(--cor-principal);
-            line-height: 1.6;
-        } 
-
-       
-        .content-section {
-            padding: 10px 1%;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-    
-
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            border-bottom: 1px solid var(--cor-borda);
-        }
-
-        .logo {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 20px;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--cor-principal);
-            font-size: 0.9em;
-            
-            font-weight: normal; 
-        }
-
-        .nav-links a:nth-child(4) {
-            font-weight: normal
-        }
-
-             
-
-        .hero-banner {
-            background-color: var(--cor-fundo-header);
-            color: #ffffff;
-            text-align: center;
-            padding: 100px 5%;
-        }
-
-        .hero-banner h1 {
-            font-size: 2.5em;
-            margin-bottom: 15px;
-            font-weight: 500;
-        }
-
-        .hero-banner p {
-            margin-bottom: 30px;
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .hero-banner button {
-            background-color: var(--cor-acento);
-            color: #ffffff;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-      
-
-        .section-heading {
-            text-align: center;
-            padding: 40px 0;
-            font-size: 1.8em;
-            font-weight: bold;
-            color: var(--cor-principal);
-        }
-
-        
-
-        .continuar-leitura {
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
+        /* Estilos especificos da Home */
         .livro-card {
-            flex: 1; 
-            background-color: var(--cor-fundo-body);
-            border: 1px solid var(--cor-borda);
-            border-radius: 4px;
-            padding: 15px;
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 1rem;
+            box-shadow: var(--shadow);
             position: relative;
+            overflow: hidden;
+        }
+
+        .livro-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1rem;
         }
 
         .livro-card-tag {
             position: absolute;
-            top: 0;
-            left: 0;
-            background-color: var(--cor-capa); 
-            color: var(--cor-secundaria);
-            font-size: 0.8em;
-            padding: 5px 10px;
-            border-radius: 4px 0 4px 0;
-        }
-
-        .capa-exemplo {
-            background-color: var(--cor-capa);
-            height: 180px;
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: var(--cor-secundaria);
-            font-size: 0.9em;
-        }
-
-        .livro-card h3 {
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .livro-card p {
-            font-size: 0.9em;
-            color: var(--cor-secundaria);
-        }
-
-        .recomendacoes-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr); 
-            gap: 30px;
-            margin-bottom: 80px;
+            top: 1rem;
+            left: 1rem;
+            z-index: 10;
         }
 
         .recomendacao-item {
+            background: var(--white);
+            padding: 1rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
             display: flex;
-            gap: 15px;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .recomendacao-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .recomendacao-capa {
             width: 80px;
-            height: 80px;
-            background-color: var(--cor-capa);
-            flex-shrink: 0; 
+            height: 100px;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .recomendacao-capa img, .recomendacao-capa image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .recomendacao-info {
-            flex-grow: 1;
-            text-align: left; 
+            flex: 1;
         }
 
         .recomendacao-info h3 {
-            font-size: 1em;
-            margin-bottom: 5px;
+            font-size: 0.9rem;
+            color: var(--accent);
+            margin-bottom: 0.25rem;
         }
 
         .recomendacao-info p {
-            font-size: 0.9em;
-            color: var(--cor-secundaria);
-            margin-bottom: 5px;
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
         }
 
         .recomendacao-info span {
-            display: inline-block;
-            font-size: 0.75em;
-            padding: 3px 8px;
-            margin-right: 5px;
-            border-radius: 4px;
-            color: white;
-        }
-        
-        
-        .tag-novo { background-color: var(--cor-tag-novo); }
-        .tag-popular { background-color: var(--cor-tag-popular); }
-        .tag-classico { background-color: var(--cor-tag-classico); }
-        .tag-destaque { background-color: var(--cor-tag-destaque); }
-
-        
-
-        .footer {
-            border-top: 1px solid var(--cor-borda);
-            padding: 30px 5%;
-            text-align: center;
+            margin-right: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-        }
+        .tag-novo { background: var(--accent); color: white; }
+        .tag-popular { background: var(--warning); color: white; }
+        .tag-classico { background: var(--primary); color: white; }
+        .tag-destaque { background: var(--success); color: white; }
 
-        .footer-links a {
-            text-decoration: none;
-            color: var(--cor-principal);
-            font-size: 0.9em;
-        }
-
-        
-
-        @media (max-width: 900px) {
-            .continuar-leitura {
-                flex-wrap: wrap; 
-                justify-content: center;
-            }
-
-            .livro-card {
-                flex-basis: 45%; 
-            }
-
-            .recomendacoes-grid {
-                grid-template-columns: repeat(2, 1fr); 
-            }
-        }
-
-        @media (max-width: 600px) {
-            .header-top {
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            
-            .search-bar {
-                width: 100%;
-            }
-
-            .hero-banner {
-                padding: 60px 5%;
-            }
-
-            .continuar-leitura {
-                flex-direction: column;
-            }
-
-            .livro-card {
-                flex-basis: 100%; 
-            }
-            
-            .recomendacoes-grid {
-                grid-template-columns: 1fr; 
-            }
-
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-top">
-            <div class="logo">
-                Biblioteca Virtual
-            </div>
-            <nav class="nav-links">
-                <a href="#">Home</a>
-                <a href="#">Acervo</a>
-                <a href="#">Salvos</a>
-                <a href="#">Expert Reader</a>
-            </nav>
-            <div class="search-bar">
-                <input type="text" placeholder="Pesquisar">
-                <button aria-label="Pesquisar">&#128269;</button>
-            </div>
-        </div>
+        <h1>Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./catálogodelivros.html">Acervo</a></li>
+                <li><a href="./favoritos.html">Salvos</a></li>
+                <li><a href="./catálogodelivros.html">Expert Reader</a></li>
+                <li>
+                    <div class="search-container">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Pesquisar">
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-banner">
@@ -313,75 +119,22 @@
 
     <section class="content-section">
         <h2 class="section-heading">Continuar leitura</h2>
-        <div class="continuar-leitura">
-            
-            <div class="livro-card"> <img src="https://editoraviseu.com/wp-content/uploads/2023/03/Livro-A-Guerra-dos-Tronos-As-Cronicas-de-Gelo-e-Fogo.webp"width="300">
-                <span class="livro-card-tag">Ficção</span>
-             
-                <h3>Livro: As Crônicas de Gelo e Fogo</h3>
-                <p>Autor: George R. R. Martin</p>
-            </div>
-
-            <div class="livro-card"><img src="https://m.media-amazon.com/images/I/8177asxnGGL._SL1500_.jpg"width="290">
-               <span class="livro-card-tag">Não-Ficção</span>
-              <h3>Livro: O mito da beleza</h3>
-                <p>Autora: Naomi Wolf </p>
-            </div>
-
-            <div class="livro-card"><img src="https://m.media-amazon.com/images/I/91r5G8RxqfL._SY466_.jpg"width="280px">
-                <span class="livro-card-tag">Romance</span>
-                <h3>Livro: É Assim que Acaba</h3>
-                <p>Autora: Colleen Hoover</p>
-            </div>
-
+        <div class="continuar-leitura" id="continuar-leitura">
+            <!-- Carregado dinamicamente -->
         </div>
     </section>
 
     <section class="content-section">
         <h2 class="section-heading">Expert Reader - Recomendações</h2>
-        
-        <div class="recomendacoes-grid">
-            
-            <div class="recomendacao-item">
-                <div class="recomendacao-capa"><image src="https://m.media-amazon.com/images/I/81vrJlJ-udL._SY466_.jpg"width="80px">
-                    
-                </div>
-                <div class="recomendacao-info">
-                    <h3>Recomendação 1</h3>
-                    <p>Flores partidas</p>
-                    <p>Um thriller intenso que narra a história de duas irmãs, Lydia e Claire, que se afastam após um trauma familiar.</p>
-                    <span class="tag-novo">Novo</span>
-                    <span class="tag-popular">Popular</span>
-                    <p>Autora: Karin Slaughter</p>
-                </div>
-            </div>
+        <div class="recomendacoes-grid" id="recomendacoes">
+            <!-- Carregado dinamicamente -->
+        </div>
+    </section>
 
-            <div class="recomendacao-item">
-                <div class="recomendacao-capa"><image src="https://m.media-amazon.com/images/I/91WKPd60P4L._SY466_.jpg"width="80px"></image>
-
-                </div>
-                <div class="recomendacao-info">
-                    <h3>Recomendação 2</h3>
-                    <p>O sol é para todos.</p>
-                    <p>É um clássico que narra a vida em uma pequena cidade do Alabama nos anos 1930 sob a perspectiva de uma menina chamada Scout..</p>
-                    <span class="tag-classico">Clássico</span>
-                    <p>Autora: Harper Lee</p>
-                </div>
-            </div>
-
-            <div class="recomendacao-item">
-                <div class="recomendacao-capa"><image src="https://http2.mlstatic.com/D_NQ_NP_2X_919409-MLU72972327275_112023-F.webp"width="88px"></image>
-
-                </div>
-                <div class="recomendacao-info">
-                    <h3>Recomendação 3</h3>
-                    <p>É Assim Que Começa</p>
-                    <p>É a continuação de "É Assim que Acaba", de Colleen Hoover, que acompanha Lily após seu divórcio de Ryle e seu reencontro com Atlas.</p>
-                    <span class="tag-destaque">Destaque</span>
-                    <p>Autora: Colleen Hoover</p>
-                </div>
-            </div>
-
+    <section class="content-section">
+        <h2 class="section-heading">Todos os Livros</h2>
+        <div class="livros-grid" id="todos-livros">
+            <!-- Carregado dinamicamente -->
         </div>
     </section>
 
@@ -391,77 +144,124 @@
             <a href="#">Política de Privacidade</a>
             <a href="#">Termos de Uso</a>
             <a href="#">Contacte-Nos</a>
-        </div><script>
-  
-    const biblioteca = {
-        "as crônicas de gelo e fogo": "https://editoraviseu.com/wp-content/uploads/2023/03/Livro-A-Guerra-dos-Tronos-As-Cronicas-de-Gelo-e-Fogo.webp",
-        "o mito da beleza": "https://m.media-amazon.com/images/I/8177asxnGGL._SL1500_.jpg",
-        "é assim que acaba": "https://m.media-amazon.com/images/I/91r5G8RxqfL._SY466_.jpg",
-        "flores partidas": "https://m.media-amazon.com/images/I/81vrJlJ-udL._SY466_.jpg",
-        "o sol é para todos": "https://m.media-amazon.com/images/I/91WKPd60P4L._SY466_.jpg",
-        "é assim que começa": "https://http2.mlstatic.com/D_NQ_NP_2X_919409-MLU72972327275_112023-F.webp"
-    };
-
-    
-    const btnBuscar = document.querySelector(".search-bar button");
-    const campoBuscar = document.querySelector(".search-bar input");
-
-    btnBuscar.addEventListener("click", () => {
-        const termo = campoBuscar.value.trim().toLowerCase();
-
-        let painel = document.getElementById("painel-resultado");
-        if (!painel) {
-            painel = document.createElement("div");
-            painel.id = "painel-resultado";
-            painel.style.textAlign = "center";
-            painel.style.padding = "30px";
-            document.body.appendChild(painel);
-        }
-
-        if (biblioteca[termo]) {
-            painel.innerHTML = `
-                <h2>Resultado da Pesquisa</h2>
-                <img src="${biblioteca[termo]}" width="250" style="border-radius:6px;">
-                <p><strong>${termo.toUpperCase()}</strong></p>
-            `;
-        } else {
-            painel.innerHTML = "<p>Nenhum livro encontrado.</p>";
-        }
-    });
-   
-    
-    const btnComecar = document.querySelector(".hero-banner button");
-    const sessaoLeitura = document.querySelector(".continuar-leitura");
-
-    btnComecar.addEventListener("click", () => {
-        sessaoLeitura.scrollIntoView({ behavior: "smooth" });
-    });
-
-    const menuLinks = document.querySelectorAll(".nav-links a");
-
-    menuLinks[0].addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
-    menuLinks[1].addEventListener("click", () => alert("Página do Acervo ainda em desenvolvimento."));
-    menuLinks[2].addEventListener("click", () => alert("Seus livros salvos aparecerão aqui futuramente."));
-    menuLinks[3].addEventListener("click", () => {
-        document.querySelector(".recomendacoes-grid").scrollIntoView({ behavior: "smooth" });
-    });
-
-   
-    const footerLinks = document.querySelectorAll(".footer-links a");
-
-    footerLinks[0].addEventListener("click", () => alert("Sobre nós: A Biblioteca Online visa oferecer aos leitores acesso rápido e fácil ao acervo disponível. "));
-    footerLinks[1].addEventListener("click", () => alert("Esta Política de Privacidade descreve como coletamos, utilizamos, armazenamos e protegemos as informações pessoais dos usuários da nossa biblioteca online. Ao utilizar nossos serviços, você concorda com os termos aqui descritos."));
-    footerLinks[2].addEventListener("click", () => alert("Ao acessar e utilizar a biblioteca online, você concorda com os termos e condições descritos neste documento. Caso não concorde, não utilize nossos serviços."));
-    footerLinks[3].addEventListener("click", () => alert("Entre em contato pelo e-mail: suporte@bibliotecavirtual.com"));
-
-    const heroSearchButton = document.querySelector('.search-bar button');
-    heroSearchButton.addEventListener('click', (e) => {
-        e.preventDefault();
-        alert('Simulando a ação de Buscar (navegação para a página de busca principal).');
-    });
-</script>
-
+        </div>
     </footer>
 
+    <!-- Scripts centralizados -->
+    <script src="./dados.js"></script>
+    <script src="./app.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Funcao para criar card de livro
+            function criarCardLivro(livro, tipo = 'card') {
+                const autor = BIBLIOTECA.getAutorById(livro.autorId);
+                const div = document.createElement('div');
+
+                if (tipo === 'card') {
+                    div.className = 'livro-card';
+                    div.innerHTML = `
+                        <img src="${livro.capa}" alt="${livro.titulo}">
+                        <span class="livro-card-tag">${livro.genero}</span>
+                        <h3>${livro.titulo}</h3>
+                        <p>${autor ? autor.nome : 'Autor desconhecido'}</p>
+                    `;
+                } else if (tipo === 'recomendacao') {
+                    div.className = 'recomendacao-item';
+                    div.innerHTML = `
+                        <div class="recomendacao-capa">
+                            <img src="${livro.capa}" alt="${livro.titulo}">
+                        </div>
+                        <div class="recomendacao-info">
+                            <h3>${livro.titulo}</h3>
+                            <p>${livro.descricao.substring(0, 100)}...</p>
+                            ${livro.tags.slice(0, 2).map(tag => `<span class="tag-${tag.toLowerCase().includes('novo') ? 'novo' : tag.toLowerCase().includes('clássico') ? 'classico' : 'popular'}">${tag}</span>`).join(' ')}
+                            <p>${autor ? autor.nome : ''}</p>
+                        </div>
+                    `;
+                } else if (tipo === 'mini') {
+                    div.className = 'livro-card';
+                    div.innerHTML = `
+                        <img src="${livro.capa}" alt="${livro.titulo}">
+                        <h3>${livro.titulo}</h3>
+                        <p>${autor ? autor.nome : ''}</p>
+                    `;
+                }
+
+                div.style.cursor = 'pointer';
+                div.addEventListener('click', () => APP.irParaLivro(livro.id));
+                return div;
+            }
+
+            // Carregar Continuar Leitura (primeiros 3 livros ou livros em progresso)
+            const continuarContainer = document.getElementById('continuar-leitura');
+            const livrosEmLeitura = PROGRESSO.getLivrosEmLeitura();
+
+            if (livrosEmLeitura.length > 0) {
+                livrosEmLeitura.slice(0, 3).forEach(item => {
+                    if (item.livro) {
+                        continuarContainer.appendChild(criarCardLivro(item.livro, 'card'));
+                    }
+                });
+            } else {
+                // Mostrar livros populares se nao houver em leitura
+                [1, 2, 3].forEach(id => {
+                    const livro = BIBLIOTECA.getLivroById(id);
+                    if (livro) continuarContainer.appendChild(criarCardLivro(livro, 'card'));
+                });
+            }
+
+            // Carregar Recomendacoes
+            const recomendacoesContainer = document.getElementById('recomendacoes');
+            [9, 10, 11].forEach(id => {
+                const livro = BIBLIOTECA.getLivroById(id);
+                if (livro) recomendacoesContainer.appendChild(criarCardLivro(livro, 'recomendacao'));
+            });
+
+            // Carregar Todos os Livros
+            const todosContainer = document.getElementById('todos-livros');
+            BIBLIOTECA.livros.forEach(livro => {
+                todosContainer.appendChild(criarCardLivro(livro, 'mini'));
+            });
+
+            // Navegacao do menu
+            document.querySelectorAll('header nav a').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const texto = link.textContent.trim().toLowerCase();
+                    if (texto === 'home' || texto === 'acervo' || texto === 'salvos' || texto === 'expert reader') {
+                        e.preventDefault();
+                        if (texto === 'home') APP.irParaHome();
+                        else if (texto === 'acervo') APP.irParaCatalogo();
+                        else if (texto === 'salvos') APP.irParaFavoritos();
+                        else if (texto === 'expert reader') APP.irParaCatalogo();
+                    }
+                });
+            });
+
+            // Botao comecar a ler
+            const btnComecar = document.querySelector(".hero-banner button");
+            if (btnComecar) {
+                btnComecar.addEventListener("click", () => APP.irParaCatalogo());
+            }
+
+            // Busca
+            const inputBusca = document.getElementById("searchInput");
+            if (inputBusca) {
+                inputBusca.addEventListener("keypress", (e) => {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        const termo = inputBusca.value.trim();
+                        if (termo) APP.realizarBusca(termo);
+                    }
+                });
+            }
+
+            // Footer links
+            const footerLinks = document.querySelectorAll(".footer-links a");
+            footerLinks[0]?.addEventListener("click", (e) => { e.preventDefault(); alert("Sobre nós: A Biblioteca Virtual oferece acesso rápido e fácil a uma vasta coleção de livros."); });
+            footerLinks[1]?.addEventListener("click", (e) => { e.preventDefault(); alert("Política de Privacidade: Suas informações são protegidas."); });
+            footerLinks[2]?.addEventListener("click", (e) => { e.preventDefault(); alert("Termos de Uso: Ao usar a biblioteca, você concorda em respeitar os direitos autorais."); });
+            footerLinks[3]?.addEventListener("click", (e) => { e.preventDefault(); alert("Contato: suporte@bibliotecavirtual.com"); });
+        });
+    </script>
 </body>
 </html>

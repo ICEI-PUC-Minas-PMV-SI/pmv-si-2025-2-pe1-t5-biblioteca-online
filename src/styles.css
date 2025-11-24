@@ -1,0 +1,570 @@
+/* =============================================
+   STYLES.CSS - CSS Base da Biblioteca Virtual
+   ============================================= */
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* =============================================
+   VARIAVEIS
+   ============================================= */
+:root {
+    --primary: #2c3e50;
+    --primary-light: #34495e;
+    --primary-dark: #1a252f;
+    --accent: #3498db;
+    --accent-hover: #2980b9;
+    --success: #27ae60;
+    --warning: #f39c12;
+    --danger: #e74c3c;
+    --white: #ffffff;
+    --gray-50: #f8f9fa;
+    --gray-100: #f1f3f5;
+    --gray-200: #e9ecef;
+    --gray-300: #dee2e6;
+    --gray-400: #ced4da;
+    --gray-500: #adb5bd;
+    --gray-600: #868e96;
+    --gray-700: #495057;
+    --gray-800: #343a40;
+    --gray-900: #212529;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+    --shadow: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+    --radius-sm: 6px;
+    --radius: 10px;
+    --radius-lg: 16px;
+    --transition: all 0.2s ease;
+}
+
+/* =============================================
+   RESET E BASE
+   ============================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--gray-50);
+    color: var(--gray-800);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    transition: var(--transition);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* =============================================
+   HEADER / NAVBAR
+   ============================================= */
+.header, .navbar, #header, header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+/* Search Container padronizado */
+.search-container, .search-bar {
+    display: flex;
+    align-items: center;
+    background: var(--gray-100);
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 0.5rem 1rem;
+    gap: 0.5rem;
+    transition: var(--transition);
+}
+
+.search-container:focus-within, .search-bar:focus-within {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+.search-container .search-icon, .search-bar .search-icon {
+    width: 16px;
+    height: 16px;
+    color: var(--gray-500);
+    flex-shrink: 0;
+}
+
+.search-container input, .search-bar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 0.9rem;
+    width: 150px;
+    color: var(--gray-800);
+    padding: 0;
+}
+
+.search-container input::placeholder, .search-bar input::placeholder {
+    color: var(--gray-500);
+}
+
+header h1 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin: 0;
+}
+
+.logo, .header .logo, .navbar .logo {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo img {
+    height: 36px;
+    width: auto;
+}
+
+/* Menu de Navegacao */
+header nav ul {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 0.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links, .menu, nav {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+header nav a, .nav-links a, .menu a {
+    padding: 0.5rem 1rem;
+    color: var(--gray-700);
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+    text-decoration: none;
+}
+
+header nav a:hover, .nav-links a:hover, .menu a:hover {
+    background: var(--gray-100);
+    color: var(--primary);
+}
+
+
+/* =============================================
+   HERO BANNER
+   ============================================= */
+.hero-banner, .hero {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+    color: var(--white);
+    text-align: center;
+    padding: 4rem 2rem;
+}
+
+.hero-banner h1, .hero h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.hero-banner p, .hero p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 1.5rem;
+}
+
+.hero-banner button, .hero button {
+    background: var(--white);
+    color: var(--primary);
+    padding: 0.875rem 2rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero-banner button:hover, .hero button:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* =============================================
+   SECOES DE CONTEUDO
+   ============================================= */
+.content-section, .section, main section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+}
+
+.section-heading, .section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    color: var(--gray-600);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* =============================================
+   CARDS DE LIVROS
+   ============================================= */
+.livro-card, .book-card, .card-book {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.livro-card:hover, .book-card:hover, .card-book:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.livro-card img, .book-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.livro-card h3, .book-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    padding: 0.75rem 1rem 0.25rem;
+}
+
+.livro-card p, .book-card p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    padding: 0 1rem 1rem;
+}
+
+/* Grid de Livros */
+.livros-grid, .books-grid, .catalogo-geral {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+}
+
+.continuar-leitura, .recomendacoes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+/* =============================================
+   TAGS
+   ============================================= */
+.tag, .livro-card-tag, .capa-novidade-tag {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 50px;
+    background: var(--gray-200);
+    color: var(--gray-700);
+}
+
+.tag-novo, .tag.novo { background: var(--accent); color: var(--white); }
+.tag-popular, .tag.popular { background: var(--warning); color: var(--white); }
+.tag-classico, .tag.classico { background: var(--primary); color: var(--white); }
+.tag-destaque, .tag.destaque { background: var(--success); color: var(--white); }
+
+/* =============================================
+   BOTOES
+   ============================================= */
+.btn, .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: var(--white);
+}
+
+.btn-accent:hover {
+    background: var(--accent-hover);
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid var(--gray-300);
+    color: var(--gray-700);
+}
+
+.btn-outline:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+/* =============================================
+   CATEGORIAS
+   ============================================= */
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.categories a {
+    padding: 0.5rem 1.25rem;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.3);
+}
+
+.categories a:hover {
+    background: var(--white);
+    color: var(--primary);
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.footer, footer {
+    background: var(--white);
+    border-top: 1px solid var(--gray-200);
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: var(--gray-600);
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: var(--primary);
+}
+
+/* =============================================
+   TABS / ABAS
+   ============================================= */
+.tabs {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid var(--gray-200);
+    padding-bottom: 0.5rem;
+}
+
+.tab {
+    padding: 0.75rem 1.5rem;
+    background: transparent;
+    color: var(--gray-600);
+    font-weight: 500;
+    border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+    border: none;
+}
+
+.tab:hover {
+    color: var(--primary);
+    background: var(--gray-100);
+}
+
+.tab.ativo, .tab.active {
+    color: var(--primary);
+    background: var(--gray-100);
+    border-bottom: 2px solid var(--primary);
+    margin-bottom: -2px;
+}
+
+/* =============================================
+   FORMULARIOS
+   ============================================= */
+input, textarea, select {
+    font-family: inherit;
+    font-size: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    outline: none;
+    transition: var(--transition);
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+/* =============================================
+   ESTRELAS DE AVALIACAO
+   ============================================= */
+.stars {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.stars span {
+    color: var(--warning);
+    font-size: 1.25rem;
+}
+
+.stars span.empty {
+    color: var(--gray-300);
+}
+
+/* =============================================
+   UTILITARIOS
+   ============================================= */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+.text-right { text-align: right; }
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2rem; }
+
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mb-4 { margin-bottom: 2rem; }
+
+.p-1 { padding: 0.5rem; }
+.p-2 { padding: 1rem; }
+.p-3 { padding: 1.5rem; }
+.p-4 { padding: 2rem; }
+
+/* =============================================
+   RESPONSIVIDADE
+   ============================================= */
+@media (max-width: 768px) {
+    .header, .navbar, #header, header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .nav-links, .menu, nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-banner h1, .hero h1 {
+        font-size: 1.75rem;
+    }
+
+    .hero-banner, .hero {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .content-section, .section, main section {
+        padding: 2rem 1rem;
+    }
+
+    .livros-grid, .books-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .livros-grid, .books-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .categories {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .tabs {
+        flex-wrap: wrap;
+    }
+}

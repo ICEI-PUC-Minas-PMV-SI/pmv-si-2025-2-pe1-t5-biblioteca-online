@@ -13,17 +13,25 @@
 
 </head>
 <body>
-  <header class="navbar">
-    <div class="logo">📚 Biblioteca Virtual</div>
-    <nav class="menu">
-      <a href="Home.html">Home</a>
-      <a href="#">Acervo</a>
-      <a href="#">Salvos</a>
-      <a href="#">Expert Reader</a>
+  <header>
+    <h1>Biblioteca Virtual</h1>
+    <nav>
+      <ul>
+        <li><a href="./Home.html">Home</a></li>
+        <li><a href="./catálogodelivros.html">Acervo</a></li>
+        <li><a href="./favoritos.html">Salvos</a></li>
+        <li><a href="./catálogodelivros.html">Expert Reader</a></li>
+        <li>
+          <div class="search-container">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="8"></circle>
+              <path d="m21 21-4.3-4.3"></path>
+            </svg>
+            <input type="text" id="searchInput" placeholder="Pesquisar">
+          </div>
+        </li>
+      </ul>
     </nav>
-    <div class="search">
-      <input type="text" placeholder="Pesquisar obras...">
-    </div>
   </header>
 
   <main class="autor-container">
@@ -116,7 +124,9 @@
     </div>
   </footer>
 
-  <script src="autor.js"></script>
-
+  <!-- Scripts centralizados -->
+  <script src="./dados.js"></script>
+  <script src="./app.js"></script>
+  <script src="./autor.js"></script>
 </body>
 </html>

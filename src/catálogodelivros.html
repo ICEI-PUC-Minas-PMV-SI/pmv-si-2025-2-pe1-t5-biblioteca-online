@@ -3,431 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Virtual - Catálogo V4 (Interativo e Revisado)</title>
+    <title>Biblioteca Virtual - Catálogo</title>
+    <link rel="stylesheet" href="./styles.css">
     <style>
-
-        :root {
-            --cor-principal: #333333;
-            --cor-secundaria: #888888;
-            --cor-fundo-header: #666666;
-            --cor-fundo-body: #ffffff;
-            --cor-acento: #000000;
-            --cor-borda: #dddddd;
-            --cor-capa-placeholder: #e9e9e9;
-            --cor-novo-tag: #cccccc;
-            --cor-clicavel: #007bff; 
-        }
-    
-        
-        body {
-            font-family: Arial, sans-serif;
-            background-color: var(--cor-fundo-body);
-            color: var(--cor-principal);
-            line-height: 1.6;
-            text-align: center; 
-            margin: 0;
-            padding: 0;
-        }
-      
+        /* Estilos especificos do Catalogo */
         .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 5%;
+            padding: 2rem;
         }
 
-        .header-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            border-bottom: 1px solid var(--cor-borda);
-        }
-
-        .logo {
-            font-size: 1.2em;
-            font-weight: bold;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--cor-principal);
-            font-size: 0.9em;
-            margin-left: 15px; 
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--cor-clicavel);
-        }
-
-        .search-bar {
-            display: flex;
-            align-items: center;
-            border: 1px solid var(--cor-borda);
-            border-radius: 4px;
-            padding: 5px 10px;
-        }
-
-        .search-bar input {
-            border: none;
-            outline: none;
-            padding: 0 5px;
-            font-size: 0.9em;
-        }
-
-        .search-bar button {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: var(--cor-secundaria);
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-
-        .search-bar button:hover {
-             color: var(--cor-clicavel);
-        }
-        
-        .hero-banner {
-            background-color: var(--cor-fundo-header);
-            color: #ffffff;
-            text-align: center;
-            padding: 80px 5%;
-        }
-
-        .hero-banner h1 {
-            font-size: 2em;
-            margin-bottom: 10px;
-            font-weight: 500;
-        }
-
-        .hero-banner p {
-            margin-bottom: 20px;
-            font-size: 1.1em;
-            opacity: 0.9;
-        }
-
-        .search-box {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 30px;
-        }
-
-        .search-box button {
-            background-color: var(--cor-acento);
-            color: #ffffff;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 4px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .search-box button:hover {
-            background-color: var(--cor-clicavel);
-        }
-      
-        .categories {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .categories a {
-            text-decoration: none;
-            color: #ffffff;
-            background-color: #777777;
-            padding: 8px 20px;
-            border-radius: 4px;
-            font-size: 0.9em;
-            opacity: 0.8;
-            transition: opacity 0.3s, background-color 0.3s;
-            cursor: pointer; 
-        }
-
-        .categories a:hover {
-            opacity: 1;
-            background-color: var(--cor-acento);
-        }
-        
         .novidades-section {
             display: flex;
-            padding-top: 60px; 
-            padding-bottom: 60px; 
-            gap: 40px; 
+            gap: 3rem;
             align-items: flex-start;
+            margin-bottom: 3rem;
         }
 
         .titulo-novidades {
-            flex-basis: 250px; 
-            font-size: 2em;
-            font-weight: bold;
-            color: var(--cor-principal);
-            text-align: left; 
-            flex-shrink: 0; 
-            margin-top: 30px; 
-            text-align: right; 
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            min-width: 200px;
+            text-align: right;
+            padding-top: 1rem;
         }
 
         .catalogo-novidades {
-            flex-grow: 1; 
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 30px 20px; 
-            max-width: 400px;
-            justify-self: end;
-            margin-left: auto;
-            text-align: left; 
-        }
-        
-        .novidades-livros-container {
-            flex-grow: 1;
-            display: flex;
-            justify-content: flex-end; 
+            gap: 1.5rem;
+            flex: 1;
         }
 
         .book-card-novidade {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            cursor: pointer; 
-            transition: transform 0.2s;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            cursor: pointer;
         }
 
         .book-card-novidade:hover {
-            transform: translateY(-5px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
         }
 
         .capa-novidade-container {
-            width: 150px; 
-            height: 180px; 
-            background-color: var(--cor-capa-placeholder);
-            display: flex;
-            justify-content: center;
-            align-items: center;
+            width: 100%;
+            height: 180px;
             position: relative;
-            border: 1px solid var(--cor-borda);
-            overflow: hidden; 
+            overflow: hidden;
         }
-        
+
         .capa-novidade-container img {
             width: 100%;
             height: 100%;
-            object-fit: cover; 
-            display: block;
+            object-fit: cover;
         }
 
         .capa-novidade-tag {
             position: absolute;
-            top: 0;
-            left: 0;
-            background-color: var(--cor-novo-tag);
-            color: var(--cor-principal);
-            font-size: 0.7em;
-            padding: 3px 8px;
-            border-radius: 0 0 4px 0;
-            font-weight: bold;
+            top: 0.5rem;
+            left: 0.5rem;
+        }
+
+        .book-info-novidade {
+            padding: 1rem;
         }
 
         .book-info-novidade h3 {
-            font-size: 1em;
-            font-weight: bold;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
 
         .book-info-novidade p {
-            font-size: 0.9em;
-            color: var(--cor-secundaria);
-        }
-
-        .section-title {
-            text-align: center;
-            padding: 60px 0 10px;
-            font-size: 2em;
-            font-weight: bold;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--cor-secundaria);
-            font-size: 1.1em;
+            font-size: 0.85rem;
+            color: var(--gray-600);
         }
 
         .catalogo-geral {
             display: grid;
-            grid-template-columns: repeat(4, 1fr); 
-            gap: 20px;
-            margin-bottom: 80px;
-            text-align: left; 
-        }
-        
-        .moby-dick-item {
-            grid-column: 1 / -1; 
-            border-top: 1px solid var(--cor-borda);
-            padding-top: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
         }
 
         .book-item-geral {
             display: flex;
-            gap: 10px;
-            align-items: flex-start;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            transition: var(--transition);
             cursor: pointer;
-            transition: background-color 0.2s;
-            padding: 5px;
-            border-radius: 4px;
         }
-        
+
         .book-item-geral:hover {
-            background-color: #f0f0f0;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
         }
 
         .capa-mini-container {
-            width: 50px; 
-            height: 70px;
-            background-color: var(--cor-capa-placeholder);
-            flex-shrink: 0; 
-            border: 1px solid var(--cor-borda);
+            width: 60px;
+            height: 80px;
+            border-radius: var(--radius-sm);
             overflow: hidden;
+            flex-shrink: 0;
         }
 
         .capa-mini-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
-        }
-
-        .info-geral {
-            text-align: left; 
         }
 
         .info-geral h3 {
-            font-size: 1em;
-            margin-bottom: 5px;
-            line-height: 1.2;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 0.25rem;
         }
 
         .info-geral p {
-            font-size: 0.9em;
-            color: var(--cor-secundaria);
-            line-height: 1.2;
+            font-size: 0.8rem;
+            color: var(--gray-600);
         }
 
         .info-geral span {
-            display: block;
-            font-size: 0.8em;
-            color: var(--cor-principal);
-            font-weight: bold;
-            margin-top: 5px;
-        }
-        
-        .footer {
-            border-top: 1px solid var(--cor-borda);
-            padding: 30px 5%;
-            text-align: center;
+            font-size: 0.8rem;
+            color: var(--gray-500);
+            font-weight: 500;
         }
 
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
+        .moby-dick-item {
+            grid-column: 1 / -1;
         }
 
-        .footer-links a {
-            text-decoration: none;
-            color: var(--cor-principal);
-            font-size: 0.9em;
-            cursor: pointer; 
-            transition: color 0.3s;
-        }
-        
-        .footer-links a:hover {
-            color: var(--cor-clicavel);
-        }
-
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
             .novidades-section {
                 flex-direction: column;
-                align-items: center;
-                gap: 20px;
-                text-align: center;
             }
             .titulo-novidades {
-                flex-basis: auto;
                 text-align: center;
-                font-size: 1.8em;
-                margin-top: 0; 
-            }
-            .novidades-livros-container {
-                justify-content: center;
             }
             .catalogo-novidades {
-                max-width: 100%;
-                margin-left: initial;
-                justify-content: center;
-            }
-            .catalogo-geral {
-                grid-template-columns: repeat(3, 1fr); 
+                grid-template-columns: 1fr;
             }
         }
 
-        @media (max-width: 600px) {
-            .header-top {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .search-bar {
-                width: 100%;
-            }
-            .nav-links {
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            .nav-links a {
-                margin-left: 0;
-            }
-            .categories {
-                flex-wrap: wrap;
-                gap: 10px;
-            }
-            .catalogo-novidades, .catalogo-geral {
-                grid-template-columns: 1fr; 
-            }
-            .moby-dick-item {
-                grid-column: 1 / 1; 
-            }
-            .footer-links {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <div class="header-top">
-            <div class="logo">
-                Biblioteca Virtual
-            </div>
-            <nav class="nav-links">
-                <a href="#" data-action="search" data-term="Home">Home</a>
-                <a href="#" data-action="search" data-term="Acervo">Acervo</a>
-                <a href="#" data-action="search" data-term="Salvos">Salvos</a>
-                <a href="#catalogo" data-action="navigate" data-term="Catálogo de Livros">Expert Reader</a> 
-            </nav>
-            <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Pesquisar">
-                <button id="searchButton" aria-label="Pesquisar">&#128269;</button>
-            </div>
-        </div>
+        <h1>Biblioteca Virtual</h1>
+        <nav>
+            <ul>
+                <li><a href="./Home.html">Home</a></li>
+                <li><a href="./catálogodelivros.html">Acervo</a></li>
+                <li><a href="./favoritos.html">Salvos</a></li>
+                <li><a href="#catalogo">Expert Reader</a></li>
+                <li>
+                    <div class="search-container">
+                        <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <path d="m21 21-4.3-4.3"></path>
+                        </svg>
+                        <input type="text" id="searchInput" placeholder="Pesquisar">
+                    </div>
+                </li>
+            </ul>
+        </nav>
     </header>
 
     <section class="hero-banner">
@@ -573,89 +321,105 @@
         </div>
     </footer>
 
+    <!-- Scripts centralizados -->
+    <script src="./dados.js"></script>
+    <script src="./app.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const searchInput = document.getElementById('searchInput');
-            const searchButton = document.getElementById('searchButton');
-            const heroSearchButton = document.getElementById('heroSearchButton');
-      
-            if (searchInput) {
-                searchInput.placeholder = "Pesquisar";
-            }
-            searchButton.addEventListener('click', (e) => {
-                e.preventDefault(); 
-                const searchTerm = searchInput.value.trim();
-                if (searchTerm) {
-   
-                    alert(`Item pesquisado: ${searchTerm} (simulando abertura)`);
-                    searchInput.value = ''; 
-                } else {
-                    alert('Por favor, digite um termo para Pesquisar.');
-                }
-            });
+            // Mapeamento de titulos para IDs
+            const titulosParaIds = {
+                'A Jornada': 6,           // Usando O Senhor dos Anéis como placeholder
+                'O Mistério': 4,          // 1984
+                'Tecnologias Futuras': 5, // A Revolução dos Bichos
+                'Histórias de Terror': 8, // Moby Dick
+                'O Senhor dos Anéis': 6,
+                '1984': 4,
+                'A Revolução dos Bichos': 5,
+                'Orgulho e Preconceito': 7,
+                'Moby Dick': 8
+            };
 
-            const actionLinks = document.querySelectorAll('.nav-links a, .categories a');
-            
-            actionLinks.forEach(link => {
+            // Navegacao
+            const navLinks = document.querySelectorAll('.nav-links a');
+            navLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
-                    e.preventDefault(); 
-                    const action = link.getAttribute('data-action');
+                    e.preventDefault();
                     const term = link.getAttribute('data-term');
-
-                    if (action === 'search') {
-   
-                        alert(`Item pesquisado: ${term} (simulando abertura)`);
-                    } else if (action === 'navigate' && term === 'Catálogo de Livros') {
- 
-                        const catalogoSection = document.getElementById('catalogo');
-                        if (catalogoSection) {
-                            catalogoSection.scrollIntoView({ behavior: 'smooth' });
-                            alert('Redirecionando para: Catálogo de Livros');
-                        } else {
-                            alert('Erro: Seção Catálogo de Livros não encontrada.');
-                        }
-                    } else {
- 
-                        alert(`Ação: ${action} com termo: ${term}`);
+                    if (term === 'Home') APP.irParaHome();
+                    else if (term === 'Salvos') APP.irParaFavoritos();
+                    else if (term === 'Catálogo de Livros') {
+                        document.getElementById('catalogo').scrollIntoView({ behavior: 'smooth' });
                     }
                 });
             });
 
-            heroSearchButton.addEventListener('click', (e) => {
-                e.preventDefault();
-  
-                alert('Simulando a ação de Buscar (navegação para a página de busca principal).');
+            // Busca
+            const searchInput = document.getElementById('searchInput');
+            const heroSearchButton = document.getElementById('heroSearchButton');
+
+            const realizarBusca = () => {
+                const termo = searchInput.value.trim();
+                if (termo) APP.realizarBusca(termo);
+            };
+
+            heroSearchButton.addEventListener('click', (e) => { e.preventDefault(); realizarBusca(); });
+            searchInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') { e.preventDefault(); realizarBusca(); } });
+
+            // Categorias - filtrar por genero
+            const categories = document.querySelectorAll('.categories a');
+            categories.forEach(cat => {
+                cat.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const genero = cat.getAttribute('data-term');
+                    const livros = BIBLIOTECA.getLivrosPorGenero(genero);
+                    if (livros.length > 0) {
+                        APP.irParaLivro(livros[0].id);
+                    } else {
+                        alert(`Nenhum livro encontrado na categoria "${genero}"`);
+                    }
+                });
             });
 
+            // Cards de livros clicaveis
             const bookElements = document.querySelectorAll('.book-card-novidade, .book-item-geral');
-
             bookElements.forEach(bookElement => {
+                bookElement.style.cursor = 'pointer';
                 bookElement.addEventListener('click', (e) => {
                     e.preventDefault();
                     const bookTitle = bookElement.getAttribute('data-book-title');
-                    
-                    if (bookTitle) {
-  
-                        alert(`Livro aberto: ${bookTitle}`);
+
+                    // Buscar por titulo
+                    if (titulosParaIds[bookTitle]) {
+                        APP.irParaLivro(titulosParaIds[bookTitle]);
+                    } else {
+                        // Buscar no banco de dados
+                        const livro = BIBLIOTECA.livros.find(l =>
+                            l.titulo.toLowerCase().includes(bookTitle.toLowerCase())
+                        );
+                        if (livro) {
+                            APP.irParaLivro(livro.id);
+                        }
                     }
                 });
             });
 
+            // Footer
             const footerLinks = document.querySelectorAll('.footer-links a');
-
             footerLinks.forEach(link => {
                 link.addEventListener('click', (e) => {
                     e.preventDefault();
                     const term = link.getAttribute('data-term');
-                    
-                    if (term) {
-  
-                        alert(`Exibindo conteúdo de: ${term}`);
-                    }
+                    alert(`${term}: Em breve mais informações.`);
                 });
             });
+
+            // Verificar se veio com filtro na URL
+            const filtro = APP.getParametroURL('filtro');
+            if (filtro) {
+                searchInput.value = filtro;
+                // Destacar resultados (opcional)
+            }
         });
     </script>
-
 </body>
 </html>
