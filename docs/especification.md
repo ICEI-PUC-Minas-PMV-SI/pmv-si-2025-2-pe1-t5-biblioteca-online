@@ -4,23 +4,17 @@ Definição do problema e ideia de solução a partir da perspectiva do usuário
 
 Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto.
 
-Caso deseje atribuir uma imagem a sua persona, utilize o site https://thispersondoesnotexist.com/
-
 ## Personas
 Perfis de usuário
-| Perfil Administrador |
-| Descrição | Usuário que realiza ações de gerenciamento do catálogo de forma simulada no frontend, utilizando dados pré-carregados ou apiS PÚBLICAS |
-| Necessidades | Atualizar funcionalidades de adição, remoção ou edição de livros do acervo. |
 
-| Perfil leitor (User) |
-| Descrição | Usuário inal que acessa a biblioteca online para consultar livros e informações disponíveis |
-| Necessidade | Buscar livros por título, autor ou categoria, verificar disponibilidade, acessar informações detalhadas das obras. |
+| Perfil Administrador | Descrição | Usuário que realiza ações de gerenciamento do catálogo de forma simulada no frontend, utilizando dados pré-carregados ou APIs Públicas | Necessidades | Executar funcionalidades de adição, remoção ou edição de livros do acervo. |
+
+| Perfil leitor (User) | Descrição | Usuário final que acessa a biblioteca online para consultar livros e informações disponíveis | Necessidade | Buscar livros por título, autor ou categoria, verificar disponibilidade, acessar informações detalhadas das obras. |
 
 ## Histórias de Usuários
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
-| EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR` |
 | Leitor | Buscar livros por título, autor ou categoria |Encontrar rapidamente os livros que me interessam |
 | Leitor | Verificar a disponibilidade de um livro |Saber se posso lê-lo sem precisar ir à biblioteca |
 | Leitor | Visualizar informações detalhadas sobre o livro |Entender melhor o conteúdo antes de decidir lê-lo |
@@ -29,13 +23,6 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 | Administrador | Organizar o catálogo por categorias | facilitar a navegação e a
 busca pelos livros |
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
 
 ## Requisitos
 
