@@ -8,13 +8,13 @@ Caso deseje atribuir uma imagem a sua persona, utilize o site https://thisperson
 
 ## Personas
 Perfis de usuário
-| Perfil Administrador (Admin-Simulado) |
+| Perfil Administrador |
 | Descrição | Usuário que realiza ações de gerenciamento do catálogo de forma simulada no frontend, utilizando dados pré-carregados ou apiS PÚBLICAS |
-| Necessidades | Testar funcionalidades de adição, remoção ou edição de livros (mock), verificar a organização do acervo e acompanhar como o catálogo é apresentado ao leitor |
+| Necessidades | Atualizar funcionalidades de adição, remoção ou edição de livros do acervo. |
 
 | Perfil leitor (User) |
 | Descrição | Usuário inal que acessa a biblioteca online para consultar livros e informações disponíveis |
-| Necessidade | Buscar livros por título, autor ou categoria, verificar disponibilidade, acessar informações detalhadas das obras e navegar de forma simples e intuitiva |
+| Necessidade | Buscar livros por título, autor ou categoria, verificar disponibilidade, acessar informações detalhadas das obras. |
 
 ## Histórias de Usuários
 
@@ -25,7 +25,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 | Leitor | Verificar a disponibilidade de um livro |Saber se posso lê-lo sem precisar ir à biblioteca |
 | Leitor | Visualizar informações detalhadas sobre o livro |Entender melhor o conteúdo antes de decidir lê-lo |
 | Leitor | Navegar de forma simples e intuitiva |Ter uma experiência agradável e eficiente na biblioteca |
-| Administrador | Adicionar, editar ou remover livros no catálogo | Testa como o acervo será apresentado aos leitores |
+| Administrador | Adicionar, editar ou remover livros no catálogo | Proporcionar uma melhor experiência ao leitor |
 | Administrador | Organizar o catálogo por categorias | facilitar a navegação e a
 busca pelos livros |
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
@@ -41,23 +41,13 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 
 As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto.
 
-| Busca por livros | O sistema deve permitir que o leitor busque livros por título, autor ou categoria |
-| Consulta de disponibilidade e acesso ao livro | O sistema deve permitir que o leitor verifique se um livro está disponível e, quando disponível, abra o arquivo em PDF para leitura online |
-| Visualização de informações detalhadas | O sistema deve permitir que o leitor veja detalhes sobre cada livro, como resumo, autor e categoria |
-| Navegação intuitiva | O sistema deve oferecer uma navegação simples e clara, garantindo uma experiência agradável para o leitor |
-| Gestão de livros simulada (Admin) | O sistema deve permitir que o administrador simulado adicione, edite ou remova livros no catálogo usando dados pré-carregados ou mock |
-| Organização do catálogo (Admin) | O sistema deve permitir que o administrador simulado organize os livros por categorias para facilitar a busca do leitor |
-
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade | 
 |------|-----------------------------------------|----| 
-|RF-001| O sistema deve permitir que o leitor busque livros por título, autor ou categoria--| ALTA |  
-|RF-002| O sistema deve permitir que o leitor verifique se um livro está disponível e, quando disponível, abra o arquivo em PDF para leitura online | MÉDIA | 
-|RF-003| O sistema deve permitir que o leitor visualize informações detalhadas sobre cada livro (resumo, autor e categoria) | Alta |
-|RF-004| O sistema deve oferecer uma interface de navegação simples e clara| Alta |
-|RF-005| O sistema deve permitir que o administrador simulado adicione, edite ou remova livros do catálogo (mock) | Média |
-|RF-006| O sistema deve permitir que o administrador simulado organize os livros por categorias | Média |
+|RF-001| O sistema deve permitir que o leitor busque livros por título, autor ou categoria. O sistema deve permitir que o leitor verifique se um livro está disponível e, quando disponível, abra o arquivo em PDF para leitura online--| ALTA |  
+|RF-002| O sistema deve permitir que o leitor visualize informações detalhadas sobre cada livro (resumo, autor e categoria) | Alta |
+|RF-003| O sistema deve permitir que o administrador adicione, edite ou remova livros do catálogo | Média |
 
 ### Requisitos não Funcionais
 
@@ -71,7 +61,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-06| O sistema deve estar em conformidade com padrões de acessibilidade web (como contraste e legibilidade) | Média |
 |RNF-07| O projeto deverá utilizar TailwindCSS como framework de estilos para garantir consistência visual e produtividade no frontend | Média |
 |RNF-08| O código-fonte deverá ser versionado usando Git e hospedado no GitHub; todo trabalho deve seguir fluxo de versionamento (commits claros, branches para features) | Alta |
-
+|RNF-09| O sistema deve oferecer uma interface de navegação simples e clara| Alta |
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
 
 - [Requisitos Funcionais
