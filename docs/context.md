@@ -1,6 +1,6 @@
 # Introdução
 
-Este projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online, voltada ao leitor. A plataforma permitirá consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
+Este projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online focado em obras de domínio público, voltada ao leitor que busca maior praticidade. A plataforma permitirá consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
 
 ## Problema
 
@@ -8,7 +8,7 @@ Leitores frequentemente enfrentam dificuldades para acessar informações sobre 
 
 ## Objetivos
 
-O principal objetivo deste projeto é desenvolver uma aplicação web de Biblioteca Online que ofereça aos leitores acesso rápido e fácil ao acervo disponível. Busca-se permitir a consulta de livros, verificar a disponibilidade de obras e acessar informações relevantes de maneira intuitiva e prática. Além disso, o projeto pretende melhorar a experiência do usuário, facilitando a descoberta de novos títulos e tornando o processo de consulta mais ágil e acessível, atendendo às necessidades dos leitores que atualmente encontram dificuldades em acessar informações de forma eficiente.
+O principal objetivo deste projeto é desenvolver uma aplicação web de Biblioteca Online que ofereça aos leitores acesso rápido e fácil ao acervo disponível. Busca-se permitir a consulta de livros, verificar a disponibilidade de obras e acessar informações relevantes de maneira intuitiva e prática. Além disso, o projeto pretende melhorar a experiência do usuário, facilitando a descoberta de novos títulos e tornando o processo de consulta mais ágil e acessível, atendendo às necessidades dos leitores que podem encontrar dificuldades de acessar informações de forma rápida e eficiente.
 
 ## Justificativa
 
@@ -21,7 +21,7 @@ web de Biblioteca Online, voltada para o usuário final, que facilite a consulta
 ## Público-Alvo
 
 O público-alvo da aplicação consiste principalmente em leitores de diferentes faixas
-etárias, que desejam consultar livros e materiais de leitura de forma prática e rápida. Entre os perfis de usuários podemos destacar:
+etárias, que desejam consultar livros e materiais de leitura de forma prática e rápida. Entre os usuários podemos destacar:
 
 1. Leitores frequentes: Usuários habituados à leitura, que procuram títulos
 específicos e valorizam uma experiência ágil de consulta ao catálogo. Possuem
