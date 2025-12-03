@@ -1,0 +1,240 @@
+/* Favoritos - CSS */
+@import url('./styles.css');
+
+/* Estilos especificos da pagina de favoritos */
+
+/* Main */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* Secao Favoritos */
+.favoritos-listas {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.favoritos-listas h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--gray-900);
+    margin-bottom: 0.5rem;
+}
+
+.favoritos-listas p {
+    color: var(--gray-600);
+    margin-bottom: 1.5rem;
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.tab {
+    background: var(--white);
+    border: 1px solid var(--gray-300);
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--gray-700);
+    transition: var(--transition);
+}
+
+.tab:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+}
+
+.tab.ativo {
+    background: var(--accent);
+    color: var(--white);
+    border-color: var(--accent);
+}
+
+/* Conteudo das abas */
+.conteudo {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.conteudo.ativo {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.conteudo h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+/* Grid de livros */
+.livros-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.livro {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+    border: 1px solid var(--gray-200);
+}
+
+.livro:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--accent);
+}
+
+.livro p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin: 0;
+    line-height: 1.4;
+}
+
+.livro small {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+    color: var(--gray-600);
+    font-weight: 400;
+}
+
+/* Card de livro com imagem */
+.livro-card {
+    background: var(--white);
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.livro-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-md);
+}
+
+.livro-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.livro-card .info {
+    padding: 1rem;
+}
+
+.livro-card .info h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--gray-900);
+    margin-bottom: 0.25rem;
+}
+
+.livro-card .info p {
+    font-size: 0.85rem;
+    color: var(--gray-600);
+}
+
+/* Mensagem vazia */
+.empty-message {
+    text-align: center;
+    padding: 3rem;
+    color: var(--gray-500);
+}
+
+.empty-message svg {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 1rem;
+    opacity: 0.5;
+}
+
+.empty-message p {
+    font-size: 1rem;
+}
+
+/* Footer */
+footer {
+    background: var(--white);
+    text-align: center;
+    padding: 1.5rem;
+    color: var(--gray-600);
+    border-top: 1px solid var(--gray-200);
+    margin-top: 3rem;
+}
+
+footer p {
+    font-size: 0.9rem;
+}
+
+footer a {
+    color: var(--gray-700);
+    text-decoration: none;
+    margin: 0 0.5rem;
+    transition: var(--transition);
+}
+
+footer a:hover {
+    color: var(--primary);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    header nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    .tabs {
+        gap: 0.5rem;
+    }
+
+    .tab {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .livros-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .livros-grid {
+        grid-template-columns: 1fr;
+    }
+}
