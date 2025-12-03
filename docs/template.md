@@ -1,109 +1,229 @@
-# Template padrão do site
+# Template Padrão do LêUai
 
-Layout padrão do site (HTML e CSS) que será utilizado em todas as páginas com a definição de identidade visual, aspectos de responsividade e iconografia.
+Este documento descreve o template padrão do **LêUai**, incluindo identidade visual, paleta de cores, tipografia, iconografia e aspectos de responsividade implementados na aplicação.
 
-As guias de estilo a seguir foram criadas para garantir uma experiência de usuário coesa, intuitiva e agradável. A paleta de cores foi escolhida para ser moderna e de fácil leitura, com o laranja servindo como um ponto de destaque para ações importantes. A tipografia, baseada na fonte "Inter", é conhecida por sua excelente legibilidade em telas digitais. O design segue uma abordagem responsiva, priorizando que o layout se adapte a diferentes tipos de telas.
+## Identidade Visual
 
-## Design
+O LêUai apresenta uma identidade visual moderna, limpa e focada na experiência de leitura. O design prioriza a legibilidade, com hierarquia visual clara e elementos bem organizados.
 
-Detalhe os layouts que serão utilizados. Apresente onde será colocado o logo do sistema. Defina os menus padrões, entre outras coisas.
+### Logo
+- **Posicionamento**: Canto superior esquerdo do header
+- **Formato**: Logo com texto "LêUai" integrado
+- **Tamanho**: 45px de altura (responsivo)
+- **Arquivos**: `logo.png` e `favicon.ico` em `/src/assets/`
 
-O layout será centrado e fluido, adaptando-se a diferentes tamanhos de tela. O design é minimalista para focar no conteúdo principal: os livros.
-Logo: O logo do sistema será posicionado no canto superior esquerdo do cabeçalho.
-Menus:
-Menu Principal (Navegação): Em dispositivos móveis, um menu "hambúrguer" (☰) no canto superior direito abrirá uma navegação com os itens: Home, Acervo, Expert Reader, Favoritos e Listas. Em desktops, este menu poderá ser exibido de forma vertical no lado esquerdo da tela.
-Menu de Ações: Botões de ação, como "Ler Mais Tarde" ou "Adicionar à Lista", terão um destaque especial com a cor laranja para incentivar a interação.
+## Layout
+
+### Estrutura Geral
+O layout segue um padrão consistente em todas as páginas:
+
+1. **Header Fixo**
+   - Logo do LêUai (esquerda)
+   - Menu de navegação horizontal (centro-direita)
+   - Barra de busca integrada
+   - Itens: Home | Acervo | Salvos | Expert Reader
+
+2. **Conteúdo Principal**
+   - Layout responsivo e fluido
+   - Máximo de 1200px de largura (centralizado)
+   - Espaçamento consistente (1.5rem - 2rem)
+
+3. **Footer**
+   - Links institucionais
+   - Informações de contato
+   - Centralizado e discreto
+
+### Páginas Específicas
+
+#### Home (`Home.html`)
+- Hero banner com título e descrição
+- Seção de destaques
+- Catálogo visual com cards de livros
+- Grid responsivo (auto-fill, mínimo 220px)
+
+#### Catálogo (`catálogodelivros.html`)
+- Filtros por gênero (badges clicáveis)
+- Busca por título/autor
+- Grid de livros com capas
+- Todos os 11 livros do acervo exibidos
+
+#### Detalhes do Livro (`detalhesdolivro.html`)
+- Layout em 2 colunas (capa + informações)
+- Dados completos: título, autor, sinopse, ano, páginas, avaliação
+- Botões de ação: Ler, Salvar nos Favoritos
+- Link para página do autor
+
+#### Leitura (`leitura.html`)
+- Área de leitura centralizada
+- Sidebar com sumário (capítulos/páginas)
+- Controles de personalização (fonte e tema)
+- Barra de progresso de leitura
+- Navegação: capítulos ou páginas (conforme o livro)
+
+#### Favoritos (`favoritos.html`)
+- Lista de livros salvos
+- Cards com informações básicas
+- Sistema de abas/filtros
+- Gerenciamento via LocalStorage
 
 
 ## Cores
 
-A paleta de cores combina tons neutros e suaves com uma cor de destaque vibrante para criar uma hierarquia visual clara e direcionar a atenção do usuário.
+A paleta de cores do LêUai utiliza um sistema de variáveis CSS para garantir consistência. As cores são profissionais e focadas em legibilidade.
 
-| **Hexadecimal** | **Nome** | **Função** |
-|-------|---------------------|--------------------------------------------|
-|#F4F7F9| Cinza-Azulado       | Fundo principal da aplicação               |
-|#FFFFFF| Branco              | Superfícies de conteúdo (cards, modais)    |
-|#1A2B48| Azul Marinho Escuro | Texto principal, títulos                   |
-|#7A8291| Cinza-Azulado       | Texto secundário, descrições, legendas     |
-|#FF6B00| Laranja	            | Destaque para botões de ação (CTAs), links |
-|#FFF0E6| Laranja Pálido      | Fundo para seções de destaque ou alertas   |
+### Paleta Implementada (CSS Variables)
 
-````
-/* Color Theme Swatches in Hex */
-.Cartela-Principal-1-hex { color: #1A2B48; }
-.Cartela-Principal-2-hex { color: #FFF0E6; }
-.Cartela-Principal-3-hex { color: #FF6B00; }
-.Cartela-Principal-4-hex { color: #7A8291; }
-.Cartela-Principal-5-hex { color: #F4F7F9; }
+| **Variável CSS** | **Hex** | **Uso** |
+|------------------|---------|---------|
+| `--primary` | #2c3e50 | Cor principal (header, títulos) |
+| `--primary-light` | #34495e | Variação clara do primário |
+| `--primary-dark` | #1a252f | Fundo de leitura, elementos escuros |
+| `--accent` | #3498db | Links, botões de ação, destaques |
+| `--accent-hover` | #2980b9 | Estado hover dos elementos accent |
+| `--success` | #27ae60 | Feedback positivo |
+| `--warning` | #f39c12 | Alertas |
+| `--danger` | #e74c3c | Erros, remoções |
+| `--white` | #ffffff | Fundo de cards, texto em fundos escuros |
+| `--gray-50` | #f8f9fa | Fundo geral da aplicação |
+| `--gray-100` | #f1f3f5 | Fundo secundário |
+| `--gray-200` | #e9ecef | Bordas suaves |
+| `--gray-300` | #dee2e6 | Bordas padrão |
+| `--gray-600` | #868e96 | Texto secundário |
+| `--gray-700` | #495057 | Texto terciário |
+| `--gray-800` | #343a40 | Texto principal |
+| `--gray-900` | #212529 | Texto forte, títulos |
 
-/* Color Theme Swatches in RGBA */
-.Cartela-Principal-1-rgba { color: rgba(26, 43, 72, 1); }
-.Cartela-Principal-2-rgba { color: rgba(255, 240, 230, 1); }
-.Cartela-Principal-3-rgba { color: rgba(255, 107, 0, 1); }
-.Cartela-Principal-4-rgba { color: rgba(122, 130, 145, 1); }
-.Cartela-Principal-5-rgba { color: rgba(244, 247, 249, 1); }
+### Sombras e Efeitos
 
-/* Color Theme Swatches in HSLA */
-.Cartela-Principal-1-hsla { color: hsla(217, 46, 19, 1); }
-.Cartela-Principal-2-hsla { color: hsla(23, 100, 95, 1); }
-.Cartela-Principal-3-hsla { color: hsla(25, 100, 50, 1); }
-.Cartela-Principal-4-hsla { color: hsla(219, 9, 52, 1); }
-.Cartela-Principal-5-hsla { color: hsla(204, 29, 96, 1); }
-````
+```css
+--shadow-sm: 0 1px 2px rgba(0,0,0,0.05);
+--shadow: 0 2px 8px rgba(0,0,0,0.08);
+--shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+--shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+```
+
+### Border Radius
+
+```css
+--radius-sm: 6px;
+--radius: 10px;
+--radius-lg: 16px;
+```
+
+### Temas de Leitura
+
+O sistema oferece 3 temas personalizáveis na página de leitura:
+
+1. **Escuro** (padrão): Fundo `--primary-dark`, texto branco
+2. **Claro**: Fundo branco, texto `--gray-900`
+3. **Sepia**: Fundo `#f4ecd8`, texto `#5b4636`
 ## Tipografia
 
-Apresente as fontes que serão utilizadas e sua função no site. As principais funções são: Título de página, Título de Seção, Rótulos de componentes e Corpo de Texto.
+O LêUai utiliza a família de fontes **Inter** do Google Fonts, conhecida por sua excelente legibilidade em telas digitais e suporte completo para língua portuguesa.
 
-A fonte Inter será utilizada em todo o site para garantir consistência e legibilidade. Ela será importada do Google Fonts.
-- Título de Página : 32px, Bold (700)
-- Título de Seção : 24px, Semi-Bold (600)
-- Rótulos e Botões: 16px, Medium (500)
-- Corpo de Texto: 16px, Regular (400)
+### Hierarquia Tipográfica
 
-````
-:root {
- --font-family-base: 'Inter', sans-serif;
---font-size-page-title: 32px;
+| **Elemento** | **Tamanho** | **Peso** | **Uso** |
+|--------------|-------------|----------|---------|
+| H1 (Página) | 2rem (32px) | 700 (Bold) | Títulos principais de páginas |
+| H2 (Seção) | 1.75rem (28px) | 700 (Bold) | Títulos de seções |
+| H3 (Subseção) | 1.25rem (20px) | 600 (Semibold) | Subtítulos |
+| Body (Texto) | 1rem (16px) | 400 (Regular) | Corpo de texto padrão |
+| Small (Legenda) | 0.875rem (14px) | 400 (Regular) | Legendas, metadados |
+| Botões | 0.9rem (14.4px) | 500 (Medium) | Texto em botões e CTAs |
 
---font-weight-page-title: 700; /* Bold */
---font-size-section-title: 24px;
+### Importação
 
---font-weight-section-title: 600; /* Semi-Bold */
---font-size-label: 16px; --font-weight-label: 500; /* Medium */
+```css
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+```
 
---font-size-body: 16px;
---font-weight-body: 400; /* Regular */ }
+### Configuração Base
 
-````
+```css
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--gray-800);
+}
+```
+
+### Tamanhos de Fonte na Leitura
+
+O sistema de leitura oferece 3 tamanhos personalizáveis:
+- **Pequeno**: 0.9rem (14.4px)
+- **Médio**: 1rem (16px) - padrão
+- **Grande**: 1.125rem (18px)
 
 ## Iconografia
 
-Defina os ícones que serão utilizados e suas respectivas funções.
+O LêUai utiliza a biblioteca **Feather Icons** para ícones SVG leves e consistentes.
 
-Os ícones da biblioteca Feather Icons serão usados para fornecer reconhecimento visual rápido para ações e seções comuns.
+### Ícones Implementados
 
-| **Ícone**	 | **Função** |
-|--------|----------------------------------------------------------|
-| Home	 | Navegar para a página inicial.                           |
-| Book	 | Representar o "Acervo" ou uma seção de leitura.          |
-| Award	 | Indicar a seção "Expert Reader" ou livros premiados.     |
-| List	 | Acessar as listas de livros criadas pelo usuário.        |
-| Play	 | Iniciar ou continuar uma leitura.                        |
-| Check	 | tConfirmar uma ação, como adicionar um livro a uma lista.|
+| **Ícone** | **Nome** | **Uso no Sistema** |
+|-----------|----------|-------------------|
+| 🔍 | search | Barra de busca, buscar livros |
+| 📖 | book-open | Ícone de leitura, iniciar leitura |
+| ❤️ | heart | Adicionar/remover favoritos |
+| ⭐ | star | Avaliação de livros |
+| 👤 | user | Perfil de autor |
+| 🏠 | home | Página inicial |
+| 📚 | book | Acervo, catálogo |
+| 🔖 | bookmark | Livros salvos |
+| ◀️ ▶️ | chevron-left/right | Navegação entre capítulos |
+| ✓ | check | Confirmação de ações |
 
-Apresente os estilos CSS criados para cada um dos elementos apresentados.
-Outras seções podem ser adicionadas neste documento para apresentar padrões de componentes, de menus, etc.
+### Integração
 
+```html
+<script src="https://unpkg.com/feather-icons"></script>
+<script>
+  feather.replace();
+</script>
+```
 
-<img width="1019" height="717" alt="Texto do seu parágrafo" src="https://github.com/user-attachments/assets/b0db30cf-fe0f-4972-9fe6-cb59a1228a46" />
+## Responsividade
 
+O LêUai é totalmente responsivo, adaptando-se a diferentes tamanhos de tela:
 
+### Breakpoints
 
+```css
+/* Mobile First */
+/* Smartphones: < 768px (padrão) */
 
-> **Links Úteis**:
->
-> -  [Como criar um guia de estilo de design da Web](https://edrodrigues.com.br/blog/como-criar-um-guia-de-estilo-de-design-da-web/#)
-> - [CSS Website Layout (W3Schools)](https://www.w3schools.com/css/css_website_layout.asp)
-> - [Website Page Layouts](http://www.cellbiol.com/bioinformatics_web_development/chapter-3-your-first-web-page-learning-html-and-css/website-page-layouts/)
-> - [Perfect Liquid Layout](https://matthewjamestaylor.com/perfect-liquid-layouts)
-> - [How and Why Icons Improve Your Web Design](https://usabilla.com/blog/how-and-why-icons-improve-you-web-design/)
+/* Tablets: 768px - 1024px */
+@media (min-width: 768px) { ... }
+
+/* Desktop: > 1024px */
+@media (min-width: 1024px) { ... }
+```
+
+### Adaptações por Dispositivo
+
+- **Mobile**: Menu colapsável, cards empilhados, fonte ajustada
+- **Tablet**: Grid de 2-3 colunas, sidebar opcional
+- **Desktop**: Grid de 4-5 colunas, sidebar fixa, layout expandido
+
+## Componentes Principais
+
+### Card de Livro
+- Shadow on hover
+- Transição suave (0.2s)
+- Imagem responsiva
+- Informações hierarquizadas
+
+### Botões
+- **Primário**: Background `--accent`, hover `--accent-hover`
+- **Secundário**: Border `--gray-300`, hover com shadow
+- **Altura**: 40-48px
+- **Padding**: 0.75rem 1.5rem
+- **Border-radius**: `--radius`
+
+### Inputs e Busca
+- Border: 1px solid `--gray-200`
+- Focus: Border `--accent`, box-shadow azul clara
+- Padding: 0.5rem 1rem
+- Border-radius: `--radius`

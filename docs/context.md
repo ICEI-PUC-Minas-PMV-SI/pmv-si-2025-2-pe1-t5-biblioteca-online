@@ -1,6 +1,6 @@
 # Introdução
 
-Este projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online focado em obras de domínio público, voltada ao leitor que busca maior praticidade. A plataforma permitirá consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
+O **LêUai** é uma aplicação web de Biblioteca Online desenvolvida para oferecer uma experiência completa de leitura digital. A plataforma permite consultar o catálogo de livros, ler obras completas online, salvar favoritos e gerenciar o progresso de leitura, tudo de forma rápida, prática e acessível pela internet. O projeto foi desenvolvido utilizando HTML5, CSS3 e JavaScript puro, sem frameworks, focando em uma experiência responsiva e intuitiva para o usuário final.
 
 ## Problema
 
@@ -8,7 +8,14 @@ Leitores frequentemente enfrentam dificuldades para acessar informações sobre 
 
 ## Objetivos
 
-O principal objetivo deste projeto é desenvolver uma aplicação web de Biblioteca Online que ofereça aos leitores acesso rápido e fácil ao acervo disponível. Busca-se permitir a consulta de livros, verificar a disponibilidade de obras e acessar informações relevantes de maneira intuitiva e prática. Além disso, o projeto pretende melhorar a experiência do usuário, facilitando a descoberta de novos títulos e tornando o processo de consulta mais ágil e acessível, atendendo às necessidades dos leitores que podem encontrar dificuldades de acessar informações de forma rápida e eficiente.
+O LêUai foi desenvolvido com os seguintes objetivos principais:
+
+1. **Oferecer acesso completo a livros digitais**: Permitir que usuários leiam livros completos diretamente no navegador, com navegação por capítulos ou páginas.
+2. **Facilitar a descoberta de obras**: Implementar sistema de busca e filtros por gênero (Romance, Fantasia, Ficção, Thriller, Aventura) para facilitar a descoberta de novos títulos.
+3. **Personalizar a experiência de leitura**: Fornecer controles de tema (Escuro, Claro, Sepia) e tamanho de fonte para melhor conforto visual.
+4. **Gerenciar leitura do usuário**: Permitir salvar livros favoritos e acompanhar o progresso de leitura através de localStorage.
+5. **Apresentar informações ricas**: Exibir detalhes completos dos livros incluindo capa, sinopse, autor, ano de publicação, número de páginas e avaliação.
+6. **Oferecer navegação intuitiva**: Criar uma interface responsiva e de fácil navegação, acessível em diferentes dispositivos.
 
 ## Justificativa
 
@@ -20,23 +27,19 @@ web de Biblioteca Online, voltada para o usuário final, que facilite a consulta
 
 ## Público-Alvo
 
-O público-alvo da aplicação consiste principalmente em leitores de diferentes faixas
-etárias, que desejam consultar livros e materiais de leitura de forma prática e rápida. Entre os usuários podemos destacar:
+O LêUai atende a diversos perfis de leitores:
 
-1. Leitores frequentes: Usuários habituados à leitura, que procuram títulos
-específicos e valorizam uma experiência ágil de consulta ao catálogo. Possuem
-familiaridade com tecnologias web e aplicativos digitais.
-2. Leitores ocasionais: Usuários que acessam a biblioteca esporadicamente,
-buscando informações ou títulos pontuais. Podem ter menor familiaridade com
-plataformas digitais, sendo necessário que a interface seja intuitiva e fácil de usar.
-3. Estudantes: Usuários que precisam consultar obras para estudos ou pesquisas.
-Valorizam filtros de pesquisa, organização do catálogo e informações detalhadas
-sobre cada título.
-4. Público geral interessado em leitura: Usuários com diferentes níveis de
-conhecimento tecnológico e interesses variados. Necessitam de uma navegação
-simples, com informações claras e acesso rápido ao conteúdo disponível.
+1. **Leitores frequentes**: Usuários habituados à leitura digital que buscam uma plataforma completa para ler e gerenciar sua biblioteca pessoal. Valorizam funcionalidades como controles de leitura personalizáveis e sistema de favoritos.
 
-Todos os perfis compartilham a necessidade de acesso remoto ao catálogo, consulta
-rápida sobre disponibilidade de obras e informações relevantes sobre os livros, sem
-depender de visitas presenciais à biblioteca.
+2. **Estudantes**: Usuários que precisam acessar obras clássicas e contemporâneas para estudos. Utilizam os filtros por gênero e a busca para encontrar títulos específicos rapidamente.
+
+3. **Leitores casuais**: Usuários que buscam entretenimento através da leitura. Apreciam a interface intuitiva, as recomendações visuais e a facilidade de começar a ler com apenas um clique.
+
+4. **Entusiastas de literatura**: Usuários interessados em explorar diferentes gêneros literários (Fantasia, Romance, Ficção, Thriller, Aventura, Não-Ficção) através do catálogo organizado.
+
+Características comuns aos usuários:
+- Acesso à internet e dispositivos modernos (desktop, tablet ou smartphone)
+- Interesse em leitura digital
+- Valorizam praticidade e acessibilidade
+- Buscam uma experiência de leitura confortável e personalizável
 
