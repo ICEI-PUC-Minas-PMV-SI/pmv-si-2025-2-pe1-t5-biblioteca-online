@@ -14,38 +14,76 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
+    // Verificar tipo de paginação
+    const usaPaginas = livro.tipoPaginacao === 'paginas';
+    const conteudoLeitura = usaPaginas ? livro.paginas_conteudo : livro.capitulos;
+
     // Atualizar hero
     const hero = document.querySelector('.hero');
-    hero.querySelector('h1').textContent = livro.capitulos[0].titulo;
-    hero.querySelector('p').textContent = autor ? autor.nome : 'Autor desconhecido';
-    document.title = `${livro.titulo} - Biblioteca Virtual`;
+    const tituloLivro = document.getElementById('livro-titulo');
+    const capituloAtual = document.getElementById('capitulo-atual');
+    const autorNome = document.getElementById('autor-nome');
 
-    // Gerar conteudo dos capitulos
+    tituloLivro.textContent = livro.titulo;
+    autorNome.textContent = autor ? autor.nome : 'Autor desconhecido';
+
+    if (usaPaginas) {
+        capituloAtual.textContent = 'Página 1';
+    } else {
+        capituloAtual.textContent = conteudoLeitura[0].titulo;
+    }
+
+    document.title = `${livro.titulo} - LêUai`;
+
+    // Gerar conteudo
     const content = document.querySelector('.content');
     content.innerHTML = '';
 
-    livro.capitulos.forEach((capitulo, index) => {
-        const section = document.createElement('section');
-        section.id = `capitulo${index + 1}`;
-        section.className = 'chapter';
-        section.innerHTML = `
-            <h2>${capitulo.titulo}</h2>
-            <p>${capitulo.conteudo}</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        `;
-        content.appendChild(section);
-    });
+    if (usaPaginas) {
+        // Navegação por páginas
+        conteudoLeitura.forEach((pagina, index) => {
+            const section = document.createElement('section');
+            section.id = `pagina${pagina.numero}`;
+            section.className = 'chapter';
+            section.innerHTML = `
+                <h2>Página ${pagina.numero}</h2>
+                <div style="white-space: pre-wrap;">${pagina.conteudo}</div>
+            `;
+            content.appendChild(section);
+        });
+    } else {
+        // Navegação por capítulos
+        conteudoLeitura.forEach((capitulo, index) => {
+            const section = document.createElement('section');
+            section.id = `capitulo${index + 1}`;
+            section.className = 'chapter';
+            section.innerHTML = `
+                <h2>${capitulo.titulo}</h2>
+                <div style="white-space: pre-wrap;">${capitulo.conteudo}</div>
+            `;
+            content.appendChild(section);
+        });
+    }
 
     // Atualizar sumario
     const chapterList = document.querySelector('.chapter-list');
     chapterList.innerHTML = '';
 
-    livro.capitulos.forEach((capitulo, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `<a href="#capitulo${index + 1}">${capitulo.titulo}</a>`;
-        chapterList.appendChild(li);
-    });
+    if (usaPaginas) {
+        // Sumário por páginas
+        conteudoLeitura.forEach((pagina) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#pagina${pagina.numero}">Página ${pagina.numero}</a>`;
+            chapterList.appendChild(li);
+        });
+    } else {
+        // Sumário por capítulos
+        conteudoLeitura.forEach((capitulo, index) => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#capitulo${index + 1}">${capitulo.titulo}</a>`;
+            chapterList.appendChild(li);
+        });
+    }
 
     // Elementos atualizados
     const chapters = document.querySelectorAll('.chapter');
@@ -168,8 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateHero() {
         const title = chapters[currentChapter].querySelector('h2');
-        if (title && hero) {
-            hero.querySelector('h1').textContent = title.textContent;
+        if (title && capituloAtual) {
+            capituloAtual.textContent = title.textContent;
         }
     }
 

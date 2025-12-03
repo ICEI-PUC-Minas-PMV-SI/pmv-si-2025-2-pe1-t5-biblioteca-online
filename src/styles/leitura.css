@@ -12,14 +12,22 @@
 }
 
 .hero h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    font-weight: 600;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.hero h2 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    opacity: 0.95;
 }
 
 .hero p {
     opacity: 0.9;
     font-size: 0.95rem;
+    margin: 0;
 }
 
 /* Controles de Leitura */
