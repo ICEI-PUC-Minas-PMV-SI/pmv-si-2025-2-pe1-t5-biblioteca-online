@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biblioteca Virtual - Home</title>
+    <title>LêUai - Home</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/styles.css">
     <style>
         /* Estilos especificos da Home */
@@ -91,7 +92,9 @@
 <body>
 
     <header>
-        <h1>Biblioteca Virtual</h1>
+        <div class="header-logo">
+            <img src="../assets/logo.png" alt="LêUai">
+        </div>
         <nav>
             <ul>
                 <li><a href="./Home.html">Home</a></li>
@@ -112,7 +115,7 @@
     </header>
 
     <section class="hero-banner">
-        <h1>Bem-vindo à Biblioteca Virtual</h1>
+        <h1>Bem-vindo ao LêUai</h1>
         <p>Explore uma vasta coleção de livros e recomendações personalizadas.</p>
         <button>Começar a Ler</button>
     </section>
@@ -257,10 +260,10 @@
 
             // Footer links
             const footerLinks = document.querySelectorAll(".footer-links a");
-            footerLinks[0]?.addEventListener("click", (e) => { e.preventDefault(); alert("Sobre nós: A Biblioteca Virtual oferece acesso rápido e fácil a uma vasta coleção de livros."); });
+            footerLinks[0]?.addEventListener("click", (e) => { e.preventDefault(); alert("Sobre nós: O LêUai oferece acesso rápido e fácil a uma vasta coleção de livros."); });
             footerLinks[1]?.addEventListener("click", (e) => { e.preventDefault(); alert("Política de Privacidade: Suas informações são protegidas."); });
             footerLinks[2]?.addEventListener("click", (e) => { e.preventDefault(); alert("Termos de Uso: Ao usar a biblioteca, você concorda em respeitar os direitos autorais."); });
-            footerLinks[3]?.addEventListener("click", (e) => { e.preventDefault(); alert("Contato: suporte@bibliotecavirtual.com"); });
+            footerLinks[3]?.addEventListener("click", (e) => { e.preventDefault(); alert("Contato: suporte@leuai.com"); });
         });
     </script>
 </body>

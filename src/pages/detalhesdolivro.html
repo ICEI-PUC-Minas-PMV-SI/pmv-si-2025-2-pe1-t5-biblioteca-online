@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detalhe do Livro</title>
+    <title>LêUai - Detalhe do Livro</title>
+    <link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
     <link rel="stylesheet" href="../styles/detalhesdolivro.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
@@ -11,7 +12,9 @@
 <body>
 
     <header>
-        <h1>Biblioteca Virtual</h1>
+        <div class="header-logo">
+            <img src="../assets/logo.png" alt="LêUai">
+        </div>
         <nav>
             <ul>
                 <li><a href="./Home.html">Home</a></li>
@@ -164,7 +167,7 @@
             // Atualizar titulo e info
             document.querySelector('.info-livro h1').textContent = livro.titulo;
             document.querySelector('.info-livro > p').textContent = livro.descricao;
-            document.title = `${livro.titulo} - Biblioteca Virtual`;
+            document.title = `${livro.titulo} - LêUai`;
 
             // Atualizar capa
             const capaDiv = document.querySelector('.maincover-book');

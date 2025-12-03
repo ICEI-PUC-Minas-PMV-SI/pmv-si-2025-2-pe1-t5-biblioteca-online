@@ -2,9 +2,10 @@
 # Visit https://bit.ly/cffinit to generate yours today!
 
 cff-version: 1.2.0
-title: Web Application Template
+title: LêUai - Biblioteca Online
 message: >-
-  Repositório padrão para o Eixo 1 - Projeto 1: Aplicações
+  Aplicação web de biblioteca online para consulta de catálogo
+  de livros desenvolvida para o Eixo 1 - Projeto 1: Aplicações
   Web da PUC Minas.
 type: software
 authors:
@@ -22,8 +23,10 @@ authors:
 repository-code: >-
   https://github.com/ICEI-PUC-Minas-PMV-SI/WebApplicationProject-Template
 abstract: >-
-  Descrever resumidamente, em um ou dois parágrafos, o
-  projeto que foi desenvolvido.
+  O LêUai é uma plataforma web de biblioteca online voltada ao leitor,
+  permitindo consultar o catálogo de livros, verificar disponibilidade
+  de obras e acessar informações de forma rápida e prática, oferecendo
+  uma experiência simples e acessível ao usuário final.
 keywords:
   - Desenvolvimento Web
   - HTML

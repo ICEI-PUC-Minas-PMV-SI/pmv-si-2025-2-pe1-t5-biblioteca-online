@@ -144,6 +144,17 @@ img {
     color: var(--gray-500);
 }
 
+/* Logo no header */
+.header-logo {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo img {
+    height: 45px;
+    object-fit: contain;
+}
+
 header h1 {
     font-size: 1.25rem;
     font-weight: 700;

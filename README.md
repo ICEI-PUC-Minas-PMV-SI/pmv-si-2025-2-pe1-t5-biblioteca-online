@@ -1,4 +1,4 @@
-# Biblioteca online
+# LêUai - Biblioteca Online
 
 `CURSO: Sistemas de Informação`
 
@@ -6,7 +6,7 @@
 
 `SEMESTRE: 1º`
 
-O projeto propõe o desenvolvimento de uma aplicação web de Biblioteca Online, voltada ao leitor. A plataforma permitirá consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
+O LêUai é uma aplicação web de Biblioteca Online, voltada ao leitor. A plataforma permite consultar o catálogo de livros, verificar a disponibilidade de obras e acessar informações de forma rápida e prática pela internet, oferecendo uma experiência mais simples e acessível ao usuário final.
 
 ## Integrantes
 
